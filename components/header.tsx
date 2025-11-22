@@ -11,26 +11,24 @@ export function Header() {
             <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br from-primary to-primary/80 shadow-md group-hover:shadow-lg transition-all">
               <Stethoscope className="h-6 w-6 text-white" />
             </div>
-            <div className="flex flex-col">
-              <span className="text-2xl font-bold text-foreground tracking-tight">aga治療.com</span>
-              <span className="text-xs text-muted-foreground">薄毛治療の専門クリニック検索</span>
+            <div className="flex items-center space-x-2">
+              <span className="text-xl font-bold bg-gradient-to-r from-primary to-primary/70 bg-clip-text text-transparent">
+                低用量ピル.com
+              </span>
             </div>
           </Link>
 
-          <nav className="hidden md:flex items-center gap-6">
-            <Link href="/womens-pill" className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors">
-              女性向けピル
-            </Link>
-            <Link href="/search" className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors">
+          <nav className="hidden md:flex items-center space-x-6 text-sm font-medium">
+            <Link href="/search" className="transition-colors hover:text-primary">
               クリニック検索
             </Link>
-            <Link href="/areas" className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors">
-              エリアから探す
+            <Link href="/about-pill" className="transition-colors hover:text-primary">
+              ピルについて
             </Link>
-            <Link href="/stations" className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors">
-              駅から探す
+            <Link href="/flow" className="transition-colors hover:text-primary">
+              処方の流れ
             </Link>
-            <Link href="/help" className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors">
+            <Link href="/faq" className="transition-colors hover:text-primary">
               よくある質問
             </Link>
           </nav>

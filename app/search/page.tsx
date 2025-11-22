@@ -34,19 +34,19 @@ export async function generateMetadata({
 
   if (query) {
     return {
-      title: `「${query}」のAGA治療クリニック検索結果 | aga治療.com`,
-      description: `「${query}」に関連するAGA治療クリニックの検索結果。全国のAGA専門クリニックから、診療時間、住所、アクセス、口コミ情報を掲載。`,
+      title: `「${query}」のクリニック検索結果 | 低用量ピル.com`,
+      description: `「${query}」に関連する低用量ピル処方クリニックの検索結果。オンライン診療対応、即日発送など、条件に合わせてクリニックを探せます。`,
     }
   } else if (prefecture) {
     return {
-      title: `${prefecture}のAGA治療クリニック | aga治療.com`,
-      description: `${prefecture}のAGA治療クリニックを検索。${prefecture}で評判のAGA専門クリニックの診療時間、住所、アクセス、口コミ情報を掲載。`,
+      title: `${prefecture}の低用量ピル処方クリニック | 低用量ピル.com`,
+      description: `${prefecture}の低用量ピル処方クリニックを検索。${prefecture}で評判のクリニックの診療時間、住所、アクセス、口コミ情報を掲載。`,
     }
   }
 
   return {
-    title: `AGA治療クリニック検索 | aga治療.com`,
-    description: `全国のAGA治療専門クリニックを検索。地域、駅名からAGA治療クリニックを探せます。診療時間、住所、アクセス、口コミ情報を掲載。`,
+    title: `クリニック検索 | 低用量ピル.com`,
+    description: `全国の低用量ピル処方クリニックを検索。地域、駅名からクリニックを探せます。オンライン診療、即日発送など、あなたのライフスタイルに合ったクリニックが見つかります。`,
   }
 }
 
@@ -64,8 +64,6 @@ interface Clinic {
   hours_saturday: string
   hours_sunday: string
   hours_holiday: string
-  rating: number
-  review_count: number
   director_name: string
   featured_subjects: string
   slug: string
@@ -244,8 +242,6 @@ export default async function SearchPage({
                           city: city,
                           hours: hours,
                           directorName: clinic.director_name,
-                          rating: clinic.rating,
-                          reviewCount: clinic.review_count
                         }}
                       />
                     )

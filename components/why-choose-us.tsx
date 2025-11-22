@@ -1,64 +1,65 @@
-import { Shield, Clock, UserCheck, Smartphone } from "lucide-react"
+import { Shield, Clock, UserCheck, Smartphone, Heart, ShieldCheck, Sparkles, Search } from "lucide-react"
+
 
 export function WhyChooseUs() {
-  const reasons = [
-    {
-      icon: Shield,
-      title: "信頼できる医療機関のみ",
-      description: "厳選された専門クリニックのみを掲載。すべて医師が在籍する正規の医療機関です。"
-    },
-    {
-      icon: Clock,
-      title: "24時間予約可能",
-      description: "オンライン予約システムで、いつでもお好きな時間に予約が可能です。"
-    },
-    {
-      icon: UserCheck,
-      title: "専門医による診察",
-      description: "AGA・ED治療の専門知識を持つ医師が、一人ひとりに合った治療プランを提案します。"
-    },
-    {
-      icon: Smartphone,
-      title: "オンライン診療対応",
-      description: "通院が難しい方でも、オンラインで診察から処方まで完結できるクリニックも掲載。"
-    }
-  ]
-
   return (
-    <section className="py-20 md:py-28 bg-gradient-to-b from-primary/5 to-white">
+    <section className="py-16 bg-secondary/30">
       <div className="container">
-        <div className="mx-auto max-w-6xl">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl font-bold tracking-tight md:text-4xl mb-4">
-              選ばれる理由
-            </h2>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              安心・安全な治療をサポートするための4つのポイント
-            </p>
+        <div className="mb-12">
+          <h2 className="text-2xl font-bold tracking-tight text-foreground md:text-3xl mb-3">
+            低用量ピル.comが選ばれる理由
+          </h2>
+          <p className="text-muted-foreground">
+            全国のクリニック情報を一括検索・比較できるポータルサイトです
+          </p>
+        </div>
+
+        <div className="grid gap-6 md:grid-cols-3">
+          {/* Feature 1 */}
+          <div className="bg-white rounded-lg p-6 border border-border hover:border-primary/30 hover:shadow-md transition-all">
+            <div className="flex items-start gap-4">
+              <div className="h-12 w-12 rounded-lg bg-primary/10 text-primary flex items-center justify-center flex-shrink-0">
+                <Search className="h-6 w-6" />
+              </div>
+              <div>
+                <h3 className="text-lg font-bold mb-2">全国のクリニックを網羅</h3>
+                <p className="text-sm text-muted-foreground leading-relaxed">
+                  オンライン診療から対面診療まで、全国47都道府県のクリニック情報を掲載。条件に合わせて検索できます。
+                </p>
+              </div>
+            </div>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-8">
-            {reasons.map((reason, index) => (
-              <div
-                key={index}
-                className="group relative bg-white/80 backdrop-blur-sm rounded-3xl p-8 shadow-sm border border-primary/10 hover:border-primary/30 hover:shadow-xl hover:-translate-y-1 transition-all duration-300"
-              >
-                <div className="flex items-start gap-4">
-                  <div className="flex h-16 w-16 items-center justify-center rounded-2xl bg-gradient-to-br from-primary/10 to-primary/5 text-primary group-hover:from-primary group-hover:to-primary/90 group-hover:text-white transition-all duration-300 flex-shrink-0 shadow-inner">
-                    <reason.icon className="h-7 w-7" />
-                  </div>
-                  <div className="flex-1">
-                    <h3 className="text-xl font-semibold mb-3 text-foreground">
-                      {reason.title}
-                    </h3>
-                    <p className="text-muted-foreground leading-relaxed">
-                      {reason.description}
-                    </p>
-                  </div>
-                </div>
+          {/* Feature 2 */}
+          <div className="bg-white rounded-lg p-6 border border-border hover:border-primary/30 hover:shadow-md transition-all">
+            <div className="flex items-start gap-4">
+              <div className="h-12 w-12 rounded-lg bg-primary/10 text-primary flex items-center justify-center flex-shrink-0">
+                <ShieldCheck className="h-6 w-6" />
               </div>
-            ))}
+              <div>
+                <h3 className="text-lg font-bold mb-2">料金・特徴を比較</h3>
+                <p className="text-sm text-muted-foreground leading-relaxed">
+                  診察料、ピルの種類、配送料など、各クリニックの料金プランや特徴を一覧で比較できます。
+                </p>
+              </div>
+            </div>
           </div>
+
+          {/* Feature 3 */}
+          <div className="bg-white rounded-lg p-6 border border-border hover:border-primary/30 hover:shadow-md transition-all">
+            <div className="flex items-start gap-4">
+              <div className="h-12 w-12 rounded-lg bg-primary/10 text-primary flex items-center justify-center flex-shrink-0">
+                <Heart className="h-6 w-6" />
+              </div>
+              <div>
+                <h3 className="text-lg font-bold mb-2">充実した情報コンテンツ</h3>
+                <p className="text-sm text-muted-foreground leading-relaxed">
+                  ピルの基礎知識、服用方法、副作用など、女性の健康に役立つ情報を分かりやすく解説しています。
+                </p>
+              </div>
+            </div>
+          </div>
+
         </div>
       </div>
     </section>

@@ -1,5 +1,5 @@
 import Link from "next/link"
-import { MapPin, Phone, ChevronRight, Clock, User, Star } from "lucide-react"
+import { MapPin, Phone, ChevronRight, Clock, User } from "lucide-react"
 import { Card, CardContent } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
@@ -17,8 +17,6 @@ interface ClinicCardProps {
     city: string
     hours?: string | null
     directorName?: string | null
-    rating?: number | null
-    reviewCount?: number | null
   }
 }
 
@@ -29,30 +27,20 @@ export function ClinicCard({ clinic }: ClinicCardProps) {
         <div className="flex flex-col">
           {/* Header Section */}
           <div className="bg-gradient-to-r from-primary/5 to-primary/10 px-6 py-5 border-b border-border/50">
-            <div className="flex justify-between items-start gap-4">
-              <Link href={`/clinics/${clinic.slug}`} className="flex-1">
-                <h3 className="text-xl font-bold text-foreground group-hover:text-primary transition-colors mb-2 line-clamp-2">
-                  {clinic.name}
-                </h3>
-              </Link>
-              {clinic.rating && (
-                <div className="flex items-center gap-1 bg-background/80 backdrop-blur-sm px-2 py-1 rounded-lg border border-border/50 shadow-sm">
-                  <Star className="h-4 w-4 text-yellow-500 fill-yellow-500" />
-                  <span className="font-bold text-sm">{clinic.rating}</span>
-                  {clinic.reviewCount && (
-                    <span className="text-xs text-muted-foreground">({clinic.reviewCount})</span>
-                  )}
-                </div>
-              )}
-            </div>
+            <Link href={`/clinics/${clinic.slug}`} className="flex-1">
+              <h3 className="text-xl font-bold text-foreground group-hover:text-primary transition-colors mb-2 line-clamp-2">
+                {clinic.name}
+              </h3>
+            </Link>
 
             {clinic.directorName && (
-              <div className="flex items-center gap-2 text-sm text-muted-foreground">
+              <div className="flex items-center gap-2 text-sm text-muted-foreground mt-2">
                 <User className="h-4 w-4" />
                 <span>院長: {clinic.directorName}</span>
               </div>
             )}
           </div>
+
 
           {/* Content Section */}
           <div className="px-6 py-5 space-y-4">

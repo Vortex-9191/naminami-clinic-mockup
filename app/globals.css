@@ -4,50 +4,50 @@
 @custom-variant dark (&:is(.dark *));
 
 :root {
-  /* Stylish & Women-friendly Theme - Soft Pink & Lavender */
-  /* Background: Very pale warm white/pink */
-  --background: oklch(0.99 0.01 350);
-  --foreground: oklch(0.25 0.02 350);
+  /* Professional Media Portal Theme */
+  /* Background: Clean white */
+  --background: oklch(1 0 0);
+  --foreground: oklch(0.2 0.01 350);
 
-  /* Cards: Pure white with subtle warmth */
-  --card: oklch(1 0 0);
-  --card-foreground: oklch(0.25 0.02 350);
+  /* Cards: Subtle gray background */
+  --card: oklch(0.99 0 0);
+  --card-foreground: oklch(0.2 0.01 350);
 
   --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.25 0.02 350);
+  --popover-foreground: oklch(0.2 0.01 350);
 
-  /* Primary: Elegant Rose/Coral */
-  --primary: oklch(0.75 0.18 15);
+  /* Primary: Professional Pink (less saturated) */
+  --primary: oklch(0.65 0.15 15);
   --primary-foreground: oklch(0.99 0 0);
 
-  /* Secondary: Soft Lavender */
-  --secondary: oklch(0.9 0.05 300);
-  --secondary-foreground: oklch(0.3 0.05 300);
+  /* Secondary: Light Gray */
+  --secondary: oklch(0.96 0.01 350);
+  --secondary-foreground: oklch(0.3 0.02 350);
 
-  /* Accent: Champagne Gold */
-  --accent: oklch(0.92 0.08 90);
-  --accent-foreground: oklch(0.25 0.02 350);
+  /* Accent: Muted Gold */
+  --accent: oklch(0.88 0.06 90);
+  --accent-foreground: oklch(0.2 0.01 350);
 
-  --muted: oklch(0.97 0.01 350);
-  --muted-foreground: oklch(0.55 0.03 350);
+  --muted: oklch(0.97 0.005 350);
+  --muted-foreground: oklch(0.5 0.02 350);
 
-  --destructive: oklch(0.65 0.2 25);
+  --destructive: oklch(0.6 0.2 25);
   --destructive-foreground: oklch(0.99 0 0);
 
-  --border: oklch(0.92 0.02 350);
-  --input: oklch(0.92 0.02 350);
-  --ring: oklch(0.75 0.18 15);
+  --border: oklch(0.9 0.01 350);
+  --input: oklch(0.95 0.01 350);
+  --ring: oklch(0.65 0.15 15);
 
-  --chart-1: oklch(0.75 0.18 15);
-  --chart-2: oklch(0.7 0.15 330);
-  --chart-3: oklch(0.8 0.12 300);
-  --chart-4: oklch(0.85 0.1 60);
-  --chart-5: oklch(0.6 0.1 280);
+  --chart-1: oklch(0.65 0.15 15);
+  --chart-2: oklch(0.6 0.12 330);
+  --chart-3: oklch(0.7 0.1 300);
+  --chart-4: oklch(0.75 0.08 60);
+  --chart-5: oklch(0.55 0.08 280);
 
-  /* Softer rounded corners for modern feel */
-  --radius: 1rem;
+  /* Tighter corners for professional look */
+  --radius: 0.5rem;
 
-  --sidebar: oklch(0.99 0.01 350);
+  --sidebar: oklch(0.99 0 0);
   --sidebar-foreground: oklch(0.25 0.02 350);
   --sidebar-primary: oklch(0.75 0.18 15);
   --sidebar-primary-foreground: oklch(0.99 0 0);
@@ -59,40 +59,46 @@
 
 .dark {
   /* Dark Mode: Deep Plum/Charcoal */
-  --background: oklch(0.15 0.03 300);
-  --foreground: oklch(0.98 0.01 350);
-  
-  --card: oklch(0.18 0.03 300);
-  --card-foreground: oklch(0.98 0.01 350);
-  
-  --popover: oklch(0.15 0.03 300);
-  --popover-foreground: oklch(0.98 0.01 350);
-  
-  --primary: oklch(0.75 0.18 15);
-  --primary-foreground: oklch(0.15 0.03 300);
-  
-  --secondary: oklch(0.3 0.05 300);
-  --secondary-foreground: oklch(0.98 0.01 350);
-  
-  --accent: oklch(0.3 0.05 300);
-  --accent-foreground: oklch(0.98 0.01 350);
-  
-  --muted: oklch(0.25 0.03 300);
-  --muted-foreground: oklch(0.7 0.02 350);
-  
-  --destructive: oklch(0.65 0.2 25);
-  --destructive-foreground: oklch(0.99 0 0);
-  
-  --border: oklch(0.25 0.03 300);
-  --input: oklch(0.25 0.03 300);
-  --ring: oklch(0.75 0.18 15);
-  
+  --background: 0 0% 100%;
+  --foreground: 335 20% 20%;
+  /* Dark warm gray/brown */
+
+  --card: 0 0% 100%;
+  --card-foreground: 335 20% 20%;
+
+  --popover: 0 0% 100%;
+  --popover-foreground: 335 20% 20%;
+
+  --primary: 335 70% 65%;
+  /* Soft Pink */
+  --primary-foreground: 0 0% 100%;
+
+  --secondary: 35 40% 96%;
+  /* Warm Beige/Cream */
+  --secondary-foreground: 335 20% 20%;
+
+  --muted: 335 10% 96%;
+  --muted-foreground: 335 10% 50%;
+
+  --accent: 35 60% 90%;
+  /* Soft Gold/Beige */
+  --accent-foreground: 335 20% 20%;
+
+  --destructive: 0 84.2% 60.2%;
+  --destructive-foreground: 0 0% 98%;
+
+  --border: 335 20% 90%;
+  --input: 335 20% 90%;
+  --ring: 335 70% 65%;
+
+  --radius: 0.75rem;
+
   --chart-1: oklch(0.75 0.18 15);
   --chart-2: oklch(0.7 0.15 330);
   --chart-3: oklch(0.8 0.12 300);
   --chart-4: oklch(0.85 0.1 60);
   --chart-5: oklch(0.6 0.1 280);
-  
+
   --sidebar: oklch(0.18 0.03 300);
   --sidebar-foreground: oklch(0.98 0.01 350);
   --sidebar-primary: oklch(0.75 0.18 15);
@@ -148,6 +154,7 @@
   * {
     @apply border-border outline-ring/50;
   }
+
   body {
     @apply bg-background text-foreground;
   }

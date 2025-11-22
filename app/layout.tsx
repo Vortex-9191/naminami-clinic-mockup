@@ -11,8 +11,8 @@ const notoSansJP = Noto_Sans_JP({
 })
 
 export const metadata: Metadata = {
-  title: "aga治療.com｜全国のAGA治療専門クリニック検索",
-  description: "全国のAGA治療専門クリニックを地域・駅・条件で検索。薄毛治療の専門医による診察、オンライン診療対応クリニックも掲載。",
+  title: "低用量ピル.com | オンライン処方・クリニック検索",
+  description: "低用量ピル.com」。生理痛、避妊、肌荒れなどのお悩みを解決。全国のクリニック情報や口コミも掲載。",
   generator: "v0.app",
 }
 

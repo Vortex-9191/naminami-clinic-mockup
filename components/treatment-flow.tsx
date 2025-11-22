@@ -1,86 +1,75 @@
-import { Search as SearchIcon, Calendar, FileText, Pill } from "lucide-react"
+import { Search as SearchIcon, Calendar, FileText, Pill, CalendarCheck, Smartphone, CreditCard, Package } from "lucide-react"
 
 export function TreatmentFlow() {
-  const steps = [
-    {
-      number: "01",
-      icon: SearchIcon,
-      title: "クリニックを探す",
-      description: "お住まいの地域や駅から、通いやすいクリニックを検索します。"
-    },
-    {
-      number: "02",
-      icon: Calendar,
-      title: "予約・来院",
-      description: "オンラインまたは電話で予約。初診では問診票の記入があります。"
-    },
-    {
-      number: "03",
-      icon: FileText,
-      title: "医師による診察",
-      description: "専門医が症状を診察し、最適な治療プランを提案します。"
-    },
-    {
-      number: "04",
-      icon: Pill,
-      title: "治療開始",
-      description: "処方された薬で治療を開始。定期的な通院で経過を確認します。"
-    }
-  ]
-
   return (
-    <section className="py-20 md:py-28">
+    <section className="py-16 bg-white">
       <div className="container">
-        <div className="mx-auto max-w-6xl">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl font-bold tracking-tight md:text-4xl mb-4">
-              治療の流れ
-            </h2>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              初めての方でも安心。4つのステップで治療を始められます
-            </p>
-          </div>
+        <div className="mb-12">
+          <h2 className="text-2xl font-bold tracking-tight text-foreground md:text-3xl mb-3">
+            サイトの使い方
+          </h2>
+          <p className="text-muted-foreground">
+            3ステップで、あなたに合ったクリニックが見つかります
+          </p>
+        </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {steps.map((step, index) => (
-              <div
-                key={index}
-                className="relative"
-              >
-                {/* Connector Line */}
-                {index < steps.length - 1 && (
-                  <div className="hidden lg:block absolute top-16 left-1/2 w-full h-0.5 bg-gradient-to-r from-primary/50 to-primary/20" />
-                )}
-
-                <div className="relative bg-white rounded-3xl p-8 border border-primary/10 hover:border-primary/30 hover:shadow-lg transition-all duration-300 text-center h-full">
-                  {/* Step Number */}
-                  <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-gradient-to-r from-primary to-primary/80 text-white text-sm font-bold px-4 py-1.5 rounded-full shadow-md">
-                    STEP {step.number}
-                  </div>
-
-                  {/* Icon */}
-                  <div className="flex justify-center mb-6 mt-4">
-                    <div className="flex h-20 w-20 items-center justify-center rounded-full bg-primary/5 text-primary border border-primary/10">
-                      <step.icon className="h-8 w-8" />
-                    </div>
-                  </div>
-
-                  {/* Content */}
-                  <h3 className="text-lg font-semibold mb-3 text-foreground">
-                    {step.title}
-                  </h3>
-                  <p className="text-sm text-muted-foreground leading-relaxed">
-                    {step.description}
-                  </p>
-                </div>
+        <div className="grid gap-6 md:grid-cols-3">
+          {/* Step 1 */}
+          <div className="relative bg-white rounded-lg p-6 border border-border hover:border-primary/30 hover:shadow-md transition-all">
+            <div className="absolute -top-3 -left-3 h-10 w-10 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-bold text-lg shadow-md">
+              1
+            </div>
+            <div className="mt-4">
+              <div className="h-12 w-12 rounded-lg bg-primary/10 text-primary flex items-center justify-center mb-4">
+                <SearchIcon className="h-6 w-6" />
               </div>
-            ))}
+              <h3 className="text-lg font-bold mb-2">条件で検索</h3>
+              <p className="text-sm text-muted-foreground leading-relaxed mb-4">
+                エリア、駅名、診療時間など、あなたの希望条件でクリニックを検索します。
+              </p>
+              <div className="text-xs text-muted-foreground bg-secondary/50 rounded p-2">
+                例：「東京都」「土日診療」「オンライン対応」
+              </div>
+            </div>
           </div>
 
-          <div className="mt-12 text-center">
-            <p className="text-sm text-muted-foreground mb-4">
-              ※クリニックによって流れが異なる場合があります
-            </p>
+          {/* Step 2 */}
+          <div className="relative bg-white rounded-lg p-6 border border-border hover:border-primary/30 hover:shadow-md transition-all">
+            <div className="absolute -top-3 -left-3 h-10 w-10 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-bold text-lg shadow-md">
+              2
+            </div>
+            <div className="mt-4">
+              <div className="h-12 w-12 rounded-lg bg-primary/10 text-primary flex items-center justify-center mb-4">
+                <FileText className="h-6 w-6" />
+              </div>
+              <h3 className="text-lg font-bold mb-2">詳細を比較</h3>
+              <p className="text-sm text-muted-foreground leading-relaxed mb-4">
+                料金プラン、診療時間、特徴などを比較して、自分に合ったクリニックを選びます。
+              </p>
+              <div className="text-xs text-muted-foreground bg-secondary/50 rounded p-2">
+                料金や診療時間の違いをチェック
+              </div>
+
+            </div>
+          </div>
+
+          {/* Step 3 */}
+          <div className="relative bg-white rounded-lg p-6 border border-border hover:border-primary/30 hover:shadow-md transition-all">
+            <div className="absolute -top-3 -left-3 h-10 w-10 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-bold text-lg shadow-md">
+              3
+            </div>
+            <div className="mt-4">
+              <div className="h-12 w-12 rounded-lg bg-primary/10 text-primary flex items-center justify-center mb-4">
+                <Calendar className="h-6 w-6" />
+              </div>
+              <h3 className="text-lg font-bold mb-2">公式サイトで予約</h3>
+              <p className="text-sm text-muted-foreground leading-relaxed mb-4">
+                気になったクリニックの公式サイトへアクセスして、Web予約や問い合わせを行います。
+              </p>
+              <div className="text-xs text-muted-foreground bg-secondary/50 rounded p-2">
+                各クリニックの公式サイトへ移動します
+              </div>
+            </div>
           </div>
         </div>
       </div>
