@@ -23,14 +23,14 @@ export function Header() {
           </Link>
 
           <nav className="hidden md:flex space-x-8 text-sm font-bold text-slate-500">
+            <Link href="/areas" className="hover:text-rose-500 transition py-2 border-b-2 border-transparent hover:border-rose-500">
+              エリアから探す
+            </Link>
+            <Link href="/stations" className="hover:text-rose-500 transition py-2 border-b-2 border-transparent hover:border-rose-500">
+              駅から探す
+            </Link>
             <Link href="/about-pill" className="hover:text-rose-500 transition py-2 border-b-2 border-transparent hover:border-rose-500">
               ピルの基礎知識
-            </Link>
-            <Link href="/search" className="hover:text-rose-500 transition py-2 border-b-2 border-transparent hover:border-rose-500">
-              クリニック検索
-            </Link>
-            <Link href="/about-pill/usage" className="hover:text-rose-500 transition py-2 border-b-2 border-transparent hover:border-rose-500">
-              種類・料金
             </Link>
             <Link href="/faq" className="hover:text-rose-500 transition py-2 border-b-2 border-transparent hover:border-rose-500">
               Q&A
@@ -56,14 +56,17 @@ export function Header() {
       {/* Mobile Nav Dropdown */}
       <div className={`md:hidden absolute w-full bg-white border-t border-slate-100 shadow-xl z-50 transition-all duration-300 ease-in-out origin-top ${isMenuOpen ? 'scale-y-100 opacity-100' : 'scale-y-0 opacity-0 h-0 overflow-hidden'}`}>
         <div className="p-4 space-y-2">
+          <Link href="/areas" className="block px-4 py-3 rounded-lg hover:bg-rose-50 text-slate-700 font-bold" onClick={() => setIsMenuOpen(false)}>
+            エリアから探す
+          </Link>
+          <Link href="/stations" className="block px-4 py-3 rounded-lg hover:bg-rose-50 text-slate-700 font-bold" onClick={() => setIsMenuOpen(false)}>
+            駅から探す
+          </Link>
           <Link href="/about-pill" className="block px-4 py-3 rounded-lg hover:bg-rose-50 text-slate-700 font-bold" onClick={() => setIsMenuOpen(false)}>
             ピルの基礎知識
           </Link>
-          <Link href="/search" className="block px-4 py-3 rounded-lg hover:bg-rose-50 text-slate-700 font-bold" onClick={() => setIsMenuOpen(false)}>
-            クリニック検索
-          </Link>
-          <Link href="/about-pill/usage" className="block px-4 py-3 rounded-lg hover:bg-rose-50 text-slate-700 font-bold" onClick={() => setIsMenuOpen(false)}>
-            種類・料金
+          <Link href="/faq" className="block px-4 py-3 rounded-lg hover:bg-rose-50 text-slate-700 font-bold" onClick={() => setIsMenuOpen(false)}>
+            Q&A
           </Link>
           <div className="pt-4 border-t border-slate-100 mt-2">
             <Link href="/search" className="block w-full bg-rose-500 text-white py-3 rounded-xl font-bold shadow-md text-center" onClick={() => setIsMenuOpen(false)}>
