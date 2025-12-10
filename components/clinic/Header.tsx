@@ -16,11 +16,56 @@ export function Header() {
       label: "診療内容",
       href: "/treatment",
       submenu: [
-        { label: "産科", href: "/treatment/obstetrics", items: ["妊婦健診", "NIPT", "出生前診断", "つわり外来", "妊娠相談"] },
-        { label: "婦人科", href: "/treatment/gynecology", items: ["月経トラブル", "ピル", "アフターピル", "更年期症候群", "不妊症", "子宮筋腫"] },
-        { label: "女性泌尿器科", href: "/treatment/urology", items: ["膀胱炎", "尿失禁", "インティマレーザー"] },
-        { label: "内科", href: "/treatment/internal", items: ["片頭痛", "生活習慣病", "糖尿病"] },
-        { label: "健康診断・相談", href: "/treatment/checkup", items: ["子宮がん検診", "HPVワクチン", "レディースドック"] },
+        {
+          label: "産科",
+          href: "/treatment/obstetrics",
+          items: [
+            { name: "妊婦健診", href: "/treatment/obstetrics/prenatal" },
+            { name: "NIPT", href: "/treatment/obstetrics/nipt" },
+            { name: "出生前診断", href: "/treatment/obstetrics/prenatal-diagnosis" },
+            { name: "つわり外来", href: "/treatment/obstetrics/morning-sickness" },
+            { name: "妊娠相談", href: "/treatment/obstetrics/pregnancy-consultation" },
+          ]
+        },
+        {
+          label: "婦人科",
+          href: "/treatment/gynecology",
+          items: [
+            { name: "月経トラブル", href: "/treatment/gynecology/menstrual" },
+            { name: "低用量ピル", href: "/treatment/gynecology/pill" },
+            { name: "アフターピル", href: "/treatment/gynecology/emergency-pill" },
+            { name: "更年期症候群", href: "/treatment/gynecology/menopause" },
+            { name: "不妊症相談", href: "/treatment/gynecology/infertility" },
+            { name: "性感染症検査", href: "/treatment/gynecology/std" },
+          ]
+        },
+        {
+          label: "女性泌尿器科",
+          href: "/treatment/urology",
+          items: [
+            { name: "膀胱炎", href: "/treatment/urology/cystitis" },
+            { name: "尿失禁", href: "/treatment/urology/incontinence" },
+            { name: "インティマレーザー", href: "/treatment/urology/intima-laser" },
+          ]
+        },
+        {
+          label: "内科",
+          href: "/treatment/internal",
+          items: [
+            { name: "片頭痛", href: "/treatment/internal/migraine" },
+            { name: "生活習慣病", href: "/treatment/internal/lifestyle" },
+            { name: "糖尿病", href: "/treatment/internal/diabetes" },
+          ]
+        },
+        {
+          label: "健康診断・相談",
+          href: "/treatment/checkup",
+          items: [
+            { name: "子宮がん検診", href: "/treatment/checkup/cervical" },
+            { name: "HPVワクチン", href: "/treatment/checkup/hpv" },
+            { name: "プレコンセプションチェック", href: "/treatment/checkup/preconception" },
+          ]
+        },
       ]
     },
     { label: "医師紹介", href: "/doctors" },
@@ -63,9 +108,9 @@ export function Header() {
                       </Link>
                       <ul className="space-y-1">
                         {sub.items.map((subItem) => (
-                          <li key={subItem}>
-                            <Link href={sub.href} className="text-xs text-muted-foreground hover:text-primary">
-                              {subItem}
+                          <li key={subItem.name}>
+                            <Link href={subItem.href} className="text-xs text-muted-foreground hover:text-primary">
+                              {subItem.name}
                             </Link>
                           </li>
                         ))}
