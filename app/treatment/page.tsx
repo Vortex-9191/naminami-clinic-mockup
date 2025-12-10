@@ -6,6 +6,7 @@ export default function TreatmentPage() {
     {
       id: "general",
       name: "一般産婦人科",
+      href: "/general-gynecology",
       icon: "icon-general.svg",
       color: "bg-pink-50",
       items: [
@@ -18,6 +19,7 @@ export default function TreatmentPage() {
     {
       id: "advanced-fertility",
       name: "高度不妊治療",
+      href: "/advanced-fertility",
       icon: "icon-advanced-fertility.svg",
       color: "bg-purple-50",
       items: [
@@ -35,6 +37,7 @@ export default function TreatmentPage() {
     {
       id: "fertility",
       name: "一般不妊治療",
+      href: "/general-fertility",
       icon: "icon-fertility.svg",
       color: "bg-blue-50",
       items: [
@@ -103,7 +106,9 @@ export default function TreatmentPage() {
                     <span className="text-[8px] text-gray-500">【イラスト】</span>
                     <span className="text-[7px] text-gray-400">{dept.icon}</span>
                   </div>
-                  <h3 className="text-lg font-bold text-primary">{dept.name}</h3>
+                  <Link href={dept.href} className="text-lg font-bold text-primary hover:underline">
+                    {dept.name}
+                  </Link>
                 </div>
                 <ul className="space-y-2">
                   {dept.items.map((item, i) => (
