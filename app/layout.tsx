@@ -18,7 +18,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="ja">
-      <body className={`${zenKakuGothicAntique.variable} antialiased font-['Zen_Kaku_Gothic_Antique',_sans-serif]`}>
+      <body className={`${zenKakuGothicAntique.className} antialiased`}>
         <Suspense fallback={<div>Loading...</div>}>
           <Header />
           <main className="min-h-screen">
