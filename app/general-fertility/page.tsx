@@ -10,6 +10,38 @@ export const metadata: Metadata = {
 }
 
 export default function GeneralFertilityPage() {
+  /*
+    ============================================
+    【イラスト】一般不妊治療メニューアイコン（3個）
+    - 推奨サイズ: 80x80px / SVG
+    - ファイル名: icon-timing.svg, icon-iui.svg, icon-unexplained.svg
+    - 内容: 各治療を表す独自イラスト
+    ============================================
+  */
+  const menuItems = [
+    {
+      id: "timing",
+      title: "タイミング療法",
+      desc: "排卵日を予測し、最適なタイミングを指導",
+      href: "/treatment/fertility/timing",
+      iconFile: "icon-timing.svg",
+    },
+    {
+      id: "iui",
+      title: "人工授精",
+      desc: "精子を子宮内に直接注入",
+      href: "/treatment/fertility/iui",
+      iconFile: "icon-iui.svg",
+    },
+    {
+      id: "unexplained",
+      title: "原因不明不妊症",
+      desc: "検査で異常が見つからない不妊への対応",
+      href: "/treatment/fertility/unexplained",
+      iconFile: "icon-unexplained.svg",
+    },
+  ]
+
   const treatments = [
     {
       id: "timing",
@@ -88,6 +120,38 @@ export default function GeneralFertilityPage() {
           </nav>
         </div>
       </div>
+
+      {/* Menu Navigation with Icons */}
+      <section className="py-12 bg-white">
+        <div className="container">
+          <h2 className="text-xl font-bold text-primary text-center mb-8">一般不妊治療メニュー</h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto">
+            {menuItems.map((item) => (
+              <Link
+                key={item.id}
+                href={item.href}
+                className="bg-blue-50 border border-blue-200 rounded-2xl p-6 hover:shadow-md transition-shadow group text-center"
+              >
+                {/* イラストプレースホルダー */}
+                <div className="w-20 h-20 mx-auto mb-4 bg-white rounded-full flex flex-col items-center justify-center border-2 border-dashed border-gray-300">
+                  <span className="text-[8px] text-gray-500">【イラスト】</span>
+                  <span className="text-[7px] text-gray-400">{item.iconFile}</span>
+                </div>
+                <h3 className="text-lg font-bold text-primary mb-2 group-hover:underline">
+                  {item.title}
+                </h3>
+                <p className="text-sm text-muted-foreground">
+                  {item.desc}
+                </p>
+                <div className="mt-4 flex items-center justify-center text-blue-600 text-sm font-medium">
+                  詳しく見る
+                  <ArrowRight className="w-4 h-4 ml-1" />
+                </div>
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
 
       {/* Introduction */}
       <section className="py-12 bg-white">

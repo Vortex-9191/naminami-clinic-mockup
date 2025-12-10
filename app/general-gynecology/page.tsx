@@ -10,6 +10,21 @@ export const metadata: Metadata = {
 }
 
 export default function GeneralGynecologyPage() {
+  /*
+    ============================================
+    【イラスト】一般産婦人科メニューアイコン（4個）
+    - 推奨サイズ: 80x80px / SVG
+    - ファイル名: icon-menstrual.svg, icon-contraception.svg, icon-cervical-cancer.svg, icon-pregnancy-test.svg
+    - 内容: 各治療を表す独自イラスト
+    ============================================
+  */
+  const menuItems = [
+    { id: "menstrual", title: "月経関連トラブル", desc: "生理痛・月経不順・PMS", href: "/treatment/general/menstrual", iconFile: "icon-menstrual.svg" },
+    { id: "contraception", title: "避妊相談・ピル処方", desc: "低用量ピル・アフターピル", href: "/treatment/general/contraception", iconFile: "icon-contraception.svg" },
+    { id: "cervical-cancer", title: "子宮頸がん検診", desc: "定期検診・HPV検査", href: "/treatment/general/cervical-cancer", iconFile: "icon-cervical-cancer.svg" },
+    { id: "pregnancy-test", title: "妊娠判定", desc: "妊娠検査・初期健診", href: "/treatment/general/pregnancy-test", iconFile: "icon-pregnancy-test.svg" },
+  ]
+
   const treatments = [
     {
       id: "menstrual",
@@ -98,6 +113,34 @@ export default function GeneralGynecologyPage() {
           </nav>
         </div>
       </div>
+
+      {/* Menu Navigation with Icons */}
+      <section className="py-12 bg-white">
+        <div className="container">
+          <h2 className="text-xl font-bold text-primary text-center mb-8">一般産婦人科メニュー</h2>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-4xl mx-auto">
+            {menuItems.map((item) => (
+              <Link
+                key={item.id}
+                href={item.href}
+                className="bg-pink-50 border border-pink-200 rounded-2xl p-4 hover:shadow-md transition-shadow group text-center"
+              >
+                {/* イラストプレースホルダー */}
+                <div className="w-16 h-16 mx-auto mb-3 bg-white rounded-full flex flex-col items-center justify-center border-2 border-dashed border-gray-300">
+                  <span className="text-[7px] text-gray-500">【イラスト】</span>
+                  <span className="text-[6px] text-gray-400">{item.iconFile}</span>
+                </div>
+                <h3 className="text-sm font-bold text-primary mb-1 group-hover:underline">
+                  {item.title}
+                </h3>
+                <p className="text-xs text-muted-foreground">
+                  {item.desc}
+                </p>
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
 
       {/* Anchor Navigation */}
       <div className="bg-white border-b sticky top-20 z-30">

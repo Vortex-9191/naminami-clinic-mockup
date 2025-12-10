@@ -10,6 +10,25 @@ export const metadata: Metadata = {
 }
 
 export default function AdvancedFertilityPage() {
+  /*
+    ============================================
+    【イラスト】高度不妊治療メニューアイコン（8個）
+    - 推奨サイズ: 80x80px / SVG
+    - ファイル名: icon-ivf.svg, icon-icsi.svg, icon-egg-freezing.svg, icon-sperm-freezing.svg, icon-embryo-freezing.svg, icon-embryo-transfer.svg, icon-pgt.svg, icon-advanced-medicine.svg
+    - 内容: 各治療を表す独自イラスト
+    ============================================
+  */
+  const menuItems = [
+    { id: "ivf", title: "体外受精", desc: "卵子と精子を体外で受精", href: "/treatment/advanced-fertility/ivf", iconFile: "icon-ivf.svg" },
+    { id: "icsi", title: "顕微授精", desc: "精子を卵子に直接注入", href: "/treatment/advanced-fertility/icsi", iconFile: "icon-icsi.svg" },
+    { id: "egg-freezing", title: "卵子凍結", desc: "将来に備えて卵子を保存", href: "/treatment/advanced-fertility/egg-freezing", iconFile: "icon-egg-freezing.svg" },
+    { id: "sperm-freezing", title: "精子凍結", desc: "精子を凍結保存", href: "/treatment/advanced-fertility/sperm-freezing", iconFile: "icon-sperm-freezing.svg" },
+    { id: "embryo-freezing", title: "胚凍結", desc: "受精卵を凍結保存", href: "/treatment/advanced-fertility/embryo-freezing", iconFile: "icon-embryo-freezing.svg" },
+    { id: "embryo-transfer", title: "胚移植", desc: "胚を子宮に戻す", href: "/treatment/advanced-fertility/embryo-transfer", iconFile: "icon-embryo-transfer.svg" },
+    { id: "pgt", title: "着床前診断", desc: "胚の染色体を検査", href: "/treatment/advanced-fertility/pgt", iconFile: "icon-pgt.svg" },
+    { id: "advanced-medicine", title: "先進医療", desc: "最新の治療技術", href: "/treatment/advanced-fertility/advanced-medicine", iconFile: "icon-advanced-medicine.svg" },
+  ]
+
   const treatments = [
     {
       id: "ivf",
@@ -151,6 +170,34 @@ export default function AdvancedFertilityPage() {
           </nav>
         </div>
       </div>
+
+      {/* Menu Navigation with Icons */}
+      <section className="py-12 bg-white">
+        <div className="container">
+          <h2 className="text-xl font-bold text-primary text-center mb-8">高度不妊治療メニュー</h2>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-5xl mx-auto">
+            {menuItems.map((item) => (
+              <Link
+                key={item.id}
+                href={item.href}
+                className="bg-purple-50 border border-purple-200 rounded-2xl p-4 hover:shadow-md transition-shadow group text-center"
+              >
+                {/* イラストプレースホルダー */}
+                <div className="w-16 h-16 mx-auto mb-3 bg-white rounded-full flex flex-col items-center justify-center border-2 border-dashed border-gray-300">
+                  <span className="text-[7px] text-gray-500">【イラスト】</span>
+                  <span className="text-[6px] text-gray-400">{item.iconFile}</span>
+                </div>
+                <h3 className="text-sm font-bold text-primary mb-1 group-hover:underline">
+                  {item.title}
+                </h3>
+                <p className="text-xs text-muted-foreground">
+                  {item.desc}
+                </p>
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
 
       {/* Anchor Navigation */}
       <div className="bg-white border-b sticky top-20 z-30">
