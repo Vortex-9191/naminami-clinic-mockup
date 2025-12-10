@@ -218,11 +218,12 @@ export default function Home() {
               <span className="w-1 h-6 bg-primary rounded-full"></span>
               診療科目から探す
             </h3>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
               {[
                 { title: "一般産婦人科", desc: "月経関連トラブル・避妊治療・頸がん検診", href: "/treatment/general", color: "bg-pink-50", iconFile: "icon-general.svg" },
                 { title: "高度不妊治療", desc: "体外受精・顕微授精・着床前診断", href: "/treatment/advanced-fertility", color: "bg-purple-50", iconFile: "icon-advanced-fertility.svg" },
                 { title: "一般不妊治療", desc: "タイミング療法・人工授精", href: "/treatment/fertility", color: "bg-blue-50", iconFile: "icon-fertility.svg" },
+                { title: "各種検査", desc: "AMH検査・精液検査・ホルモン検査", href: "/test", color: "bg-green-50", iconFile: "icon-test.svg" },
               ].map((dept, i) => (
                 <Link key={i} href={dept.href} className="block">
                   <div className="bg-white p-6 rounded-xl shadow-sm border border-gray-100 hover:shadow-md transition-all hover:-translate-y-1 text-center h-full">
