@@ -522,20 +522,28 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Fixed Floating Buttons */}
-      <div className="fixed bottom-0 left-0 right-0 bg-white border-t shadow-lg p-3 z-40 md:hidden">
-        <div className="flex gap-2">
-          <a href="https://line.me/" className="flex-1 bg-[#06C755] text-white py-3 px-4 rounded-lg text-center text-sm font-bold">
-            LINE予約
-          </a>
-          <a href="#" className="flex-1 bg-primary text-white py-3 px-4 rounded-lg text-center text-sm font-bold">
-            Web予約
-          </a>
-          <a href="tel:03-5747-9330" className="flex-1 bg-gray-700 text-white py-3 px-4 rounded-lg text-center text-sm font-bold">
-            電話
-          </a>
+      {/* Fixed Floating Buttons - 常時表示 */}
+      <div className="fixed bottom-0 left-0 right-0 bg-white border-t shadow-lg z-40">
+        <div className="container py-3">
+          <div className="flex gap-2 md:gap-4 md:justify-center">
+            <a href="https://line.me/" className="flex-1 md:flex-none md:min-w-[200px] bg-[#06C755] text-white py-3 px-4 rounded-lg text-center font-bold hover:opacity-90 transition-opacity">
+              <span className="hidden md:block text-xs mb-1">24時間ご予約受付</span>
+              <span className="text-sm md:text-base">LINE予約</span>
+            </a>
+            <a href="#" className="flex-1 md:flex-none md:min-w-[200px] bg-primary text-white py-3 px-4 rounded-lg text-center font-bold hover:opacity-90 transition-opacity">
+              <span className="hidden md:block text-xs mb-1">このまま予約を</span>
+              <span className="text-sm md:text-base">Web予約</span>
+            </a>
+            <a href="tel:03-5747-9330" className="flex-1 md:flex-none md:min-w-[200px] bg-gray-700 text-white py-3 px-4 rounded-lg text-center font-bold hover:opacity-90 transition-opacity">
+              <span className="hidden md:block text-xs mb-1">電話での問い合わせ</span>
+              <span className="text-sm md:text-base">03-5747-9330</span>
+            </a>
+          </div>
         </div>
       </div>
+
+      {/* フッターとの余白確保 */}
+      <div className="h-20 md:h-24"></div>
     </div>
   )
 }
