@@ -10,6 +10,14 @@ export const metadata: Metadata = {
 }
 
 export default function TestPage() {
+  /*
+    ============================================
+    【イラスト】各種検査アイコン（12個）
+    - 推奨サイズ: 80x80px / SVG
+    - ファイル名: icon-test-{id}.svg
+    - 内容: 各検査を表す独自イラスト
+    ============================================
+  */
   const tests = [
     {
       id: "preconception-female",
@@ -18,6 +26,7 @@ export default function TestPage() {
       href: "/test/preconception-female",
       color: "bg-pink-50",
       borderColor: "border-pink-200",
+      iconFile: "icon-test-preconception-female.svg",
     },
     {
       id: "preconception-male",
@@ -26,6 +35,7 @@ export default function TestPage() {
       href: "/test/preconception-male",
       color: "bg-blue-50",
       borderColor: "border-blue-200",
+      iconFile: "icon-test-preconception-male.svg",
     },
     {
       id: "amh",
@@ -34,6 +44,7 @@ export default function TestPage() {
       href: "/test/amh",
       color: "bg-purple-50",
       borderColor: "border-purple-200",
+      iconFile: "icon-test-amh.svg",
     },
     {
       id: "semen",
@@ -42,6 +53,7 @@ export default function TestPage() {
       href: "/test/semen",
       color: "bg-blue-50",
       borderColor: "border-blue-200",
+      iconFile: "icon-test-semen.svg",
     },
     {
       id: "hsg",
@@ -50,6 +62,7 @@ export default function TestPage() {
       href: "/test/hsg",
       color: "bg-purple-50",
       borderColor: "border-purple-200",
+      iconFile: "icon-test-hsg.svg",
     },
     {
       id: "endometrium",
@@ -58,6 +71,7 @@ export default function TestPage() {
       href: "/test/endometrium",
       color: "bg-pink-50",
       borderColor: "border-pink-200",
+      iconFile: "icon-test-endometrium.svg",
     },
     {
       id: "ultrasound",
@@ -66,6 +80,7 @@ export default function TestPage() {
       href: "/test/ultrasound",
       color: "bg-gray-50",
       borderColor: "border-gray-200",
+      iconFile: "icon-test-ultrasound.svg",
     },
     {
       id: "microscopy",
@@ -74,6 +89,7 @@ export default function TestPage() {
       href: "/test/microscopy",
       color: "bg-gray-50",
       borderColor: "border-gray-200",
+      iconFile: "icon-test-microscopy.svg",
     },
     {
       id: "hormone",
@@ -82,6 +98,7 @@ export default function TestPage() {
       href: "/test/hormone",
       color: "bg-pink-50",
       borderColor: "border-pink-200",
+      iconFile: "icon-test-hormone.svg",
     },
     {
       id: "infection",
@@ -90,6 +107,7 @@ export default function TestPage() {
       href: "/test/infection",
       color: "bg-yellow-50",
       borderColor: "border-yellow-200",
+      iconFile: "icon-test-infection.svg",
     },
     {
       id: "vitamin",
@@ -98,6 +116,7 @@ export default function TestPage() {
       href: "/test/vitamin",
       color: "bg-green-50",
       borderColor: "border-green-200",
+      iconFile: "icon-test-vitamin.svg",
     },
     {
       id: "recurrent",
@@ -106,6 +125,7 @@ export default function TestPage() {
       href: "/test/recurrent",
       color: "bg-orange-50",
       borderColor: "border-orange-200",
+      iconFile: "icon-test-recurrent.svg",
     },
   ]
 
@@ -161,13 +181,22 @@ export default function TestPage() {
                 href={test.href}
                 className={`${test.color} ${test.borderColor} border rounded-2xl p-6 hover:shadow-md transition-shadow group`}
               >
-                <h3 className="text-lg font-bold text-primary mb-3 group-hover:underline">
-                  {test.name}
-                </h3>
-                <p className="text-sm text-muted-foreground leading-relaxed line-clamp-3">
-                  {test.desc}
-                </p>
-                <div className="mt-4 flex items-center text-primary text-sm font-medium">
+                <div className="flex items-start gap-4">
+                  {/* イラストプレースホルダー */}
+                  <div className="w-16 h-16 flex-shrink-0 bg-white rounded-full flex flex-col items-center justify-center border-2 border-dashed border-gray-300">
+                    <span className="text-[8px] text-gray-500">【イラスト】</span>
+                    <span className="text-[6px] text-gray-400 text-center leading-tight px-1">{test.iconFile}</span>
+                  </div>
+                  <div className="flex-1 min-w-0">
+                    <h3 className="text-lg font-bold text-primary mb-2 group-hover:underline">
+                      {test.name}
+                    </h3>
+                    <p className="text-sm text-muted-foreground leading-relaxed line-clamp-2">
+                      {test.desc}
+                    </p>
+                  </div>
+                </div>
+                <div className="mt-4 flex items-center justify-end text-primary text-sm font-medium">
                   詳しく見る
                   <ChevronRight className="w-4 h-4 ml-1" />
                 </div>
