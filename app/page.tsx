@@ -55,9 +55,9 @@ export default function Home() {
       </section>
 
       {/* News Section */}
-      <section className="py-16 bg-secondary/30">
+      <section className="py-12 bg-white">
         <div className="container">
-          <div className="flex justify-between items-end mb-8">
+          <div className="flex justify-between items-end mb-6">
             <h2 className="text-2xl font-bold text-primary flex items-center gap-2">
               <span className="w-2 h-8 bg-primary rounded-full"></span>
               お知らせ
@@ -66,20 +66,50 @@ export default function Home() {
               一覧を見る <ArrowRight className="w-4 h-4" />
             </Link>
           </div>
-          <div className="bg-white rounded-xl shadow-sm p-6 space-y-4">
+          <div className="bg-gray-50 rounded-xl p-6 space-y-3">
             {[
-              { date: "2024.05.01", title: "ゴールデンウィークの診療について", cat: "お知らせ" },
-              { date: "2024.04.15", title: "新しい培養士が着任しました", cat: "スタッフ" },
-              { date: "2024.04.01", title: "4月の不妊治療説明会の日程が決まりました", cat: "イベント" },
+              { date: "2024.12.10", title: "年末年始の診療について", cat: "お知らせ" },
+              { date: "2024.12.01", title: "インフルエンザワクチン接種のお知らせ", cat: "お知らせ" },
+              { date: "2024.11.15", title: "オンライン診療の予約枠を拡大しました", cat: "お知らせ" },
             ].map((item, i) => (
-              <div key={i} className="flex flex-col md:flex-row md:items-center gap-2 md:gap-6 border-b border-gray-100 last:border-0 pb-4 last:pb-0">
-                <time className="text-muted-foreground font-medium">{item.date}</time>
-                <span className="bg-secondary text-primary px-3 py-1 rounded-full text-xs font-bold w-fit">{item.cat}</span>
+              <div key={i} className="flex flex-col md:flex-row md:items-center gap-2 md:gap-6 border-b border-gray-200 last:border-0 pb-3 last:pb-0">
+                <time className="text-muted-foreground font-medium text-sm">{item.date}</time>
+                <span className="bg-primary/10 text-primary px-3 py-1 rounded-full text-xs font-bold w-fit">{item.cat}</span>
                 <Link href="#" className="hover:text-primary transition-colors flex-1 truncate">
                   {item.title}
                 </Link>
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* About Naminami Section */}
+      <section className="py-16 bg-secondary/30">
+        <div className="container">
+          <div className="text-center mb-10">
+            <h2 className="text-3xl font-bold text-primary mb-4">なみなみについて</h2>
+            <p className="text-muted-foreground max-w-2xl mx-auto leading-relaxed">
+              レディースクリニック なみなみは、女性の一生に寄り添うクリニックです。<br />
+              思春期から更年期まで、すべてのライフステージにおける女性特有のお悩みに対応いたします。
+            </p>
+          </div>
+          <div className="grid md:grid-cols-2 gap-8 items-center">
+            <div className="bg-gray-200 rounded-2xl h-[300px] flex items-center justify-center">
+              <span className="text-muted-foreground">クリニック外観・内観写真</span>
+            </div>
+            <div className="space-y-4">
+              <p className="text-muted-foreground leading-relaxed">
+                当院は目黒駅から徒歩4分という好立地にあり、お仕事帰りや学校帰りにも通いやすい環境です。
+              </p>
+              <p className="text-muted-foreground leading-relaxed">
+                産婦人科・婦人科・女性泌尿器科・内科と幅広い診療科目を設け、
+                女性のあらゆる健康上のお悩みにワンストップで対応できる体制を整えています。
+              </p>
+              <Button variant="outline" className="rounded-full border-primary text-primary" asChild>
+                <Link href="/about">当院についてもっと見る</Link>
+              </Button>
+            </div>
           </div>
         </div>
       </section>
@@ -154,8 +184,186 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Access & Hours */}
+      {/* Features Section - 当院の特徴 */}
       <section className="py-16 bg-secondary/30">
+        <div className="container">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold text-primary mb-4">当院の特徴</h2>
+            <p className="text-muted-foreground">
+              患者様に安心して通っていただくための3つのこだわり
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-8">
+            {[
+              {
+                title: "全世代の女性に対応",
+                desc: "思春期から更年期まで、女性のライフステージに合わせた診療を提供。産婦人科・婦人科・女性泌尿器科・内科の幅広い診療科目で、あらゆるお悩みに対応します。",
+                icon: "01",
+              },
+              {
+                title: "通いやすさを追求",
+                desc: "目黒駅から徒歩4分の好立地。平日は17:30まで診療しており、お仕事や学校帰りにも通いやすい環境を整えています。オンライン診療にも対応。",
+                icon: "02",
+              },
+              {
+                title: "居心地の良い空間づくり",
+                desc: "清潔感のある院内で、リラックスしてお待ちいただけます。プライバシーに配慮した診察室で、安心してご相談いただける環境を大切にしています。",
+                icon: "03",
+              },
+            ].map((feature, i) => (
+              <div key={i} className="bg-white p-8 rounded-2xl shadow-sm border border-gray-100">
+                <div className="text-4xl font-bold text-primary/20 mb-4">{feature.icon}</div>
+                <h3 className="text-xl font-bold text-foreground mb-4">{feature.title}</h3>
+                <p className="text-muted-foreground leading-relaxed">
+                  {feature.desc}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Facility Section - 設備紹介 */}
+      <section className="py-16 bg-white">
+        <div className="container">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold text-primary mb-4">設備紹介</h2>
+            <p className="text-muted-foreground">
+              清潔で快適な空間をご用意しています
+            </p>
+          </div>
+
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+            {[
+              { name: "受付", placeholder: "受付写真" },
+              { name: "待合室", placeholder: "待合室写真" },
+              { name: "診察室", placeholder: "診察室写真" },
+              { name: "内診室", placeholder: "内診室写真" },
+              { name: "処置室", placeholder: "処置室写真" },
+              { name: "レーザー治療室", placeholder: "レーザー治療室写真" },
+              { name: "パウダールーム", placeholder: "パウダールーム写真" },
+              { name: "キッズスペース", placeholder: "キッズスペース写真" },
+            ].map((facility, i) => (
+              <div key={i} className="group">
+                <div className="bg-gray-200 rounded-xl aspect-[4/3] flex items-center justify-center mb-2 group-hover:opacity-80 transition-opacity">
+                  <span className="text-muted-foreground text-sm">{facility.placeholder}</span>
+                </div>
+                <p className="text-sm font-medium text-center">{facility.name}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Director Message Section - 院長メッセージ */}
+      <section className="py-16 bg-primary/5">
+        <div className="container">
+          <div className="grid md:grid-cols-2 gap-12 items-center">
+            <div className="order-2 md:order-1">
+              <h2 className="text-3xl font-bold text-primary mb-6">院長メッセージ</h2>
+              <div className="space-y-4 text-muted-foreground leading-relaxed">
+                <p>
+                  レディースクリニック なみなみのホームページをご覧いただき、ありがとうございます。
+                </p>
+                <p>
+                  当院は「女性のなみを理解して」をコンセプトに、女性特有の心身の波（なみ）に寄り添った医療を提供したいという想いから開院いたしました。
+                </p>
+                <p>
+                  月経のリズム、妊娠・出産、更年期など、女性の体は一生を通じて様々な変化を経験します。そんな女性の皆様が、気軽に相談でき、安心して通えるクリニックでありたいと考えています。
+                </p>
+                <p className="font-medium text-foreground">
+                  院長 叶谷 愛弓
+                </p>
+              </div>
+              <Button variant="outline" className="rounded-full border-primary text-primary mt-6" asChild>
+                <Link href="/doctors">医師紹介を見る</Link>
+              </Button>
+            </div>
+            <div className="order-1 md:order-2">
+              <div className="bg-gray-200 rounded-2xl aspect-[3/4] max-w-[300px] mx-auto flex items-center justify-center">
+                <span className="text-muted-foreground">院長写真</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Online Consultation Section - オンライン診療 */}
+      <section className="py-16 bg-white">
+        <div className="container">
+          <div className="bg-gradient-to-r from-primary/10 to-accent/10 rounded-2xl p-8 md:p-12">
+            <div className="grid md:grid-cols-2 gap-8 items-center">
+              <div>
+                <h2 className="text-3xl font-bold text-primary mb-4">オンライン診療</h2>
+                <p className="text-muted-foreground leading-relaxed mb-6">
+                  ご自宅や職場から、スマートフォンやパソコンで診察を受けることができます。
+                  お忙しい方や、来院が難しい方もお気軽にご利用ください。
+                </p>
+                <ul className="space-y-2 text-muted-foreground mb-6">
+                  <li className="flex items-center gap-2">
+                    <span className="w-2 h-2 bg-primary rounded-full"></span>
+                    ピルの処方・継続処方
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <span className="w-2 h-2 bg-primary rounded-full"></span>
+                    再診・経過観察
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <span className="w-2 h-2 bg-primary rounded-full"></span>
+                    健康相談
+                  </li>
+                </ul>
+                <Button className="bg-primary text-white rounded-full" asChild>
+                  <Link href="/online">オンライン診療について詳しく見る</Link>
+                </Button>
+              </div>
+              <div className="bg-gray-200 rounded-xl h-[250px] flex items-center justify-center">
+                <span className="text-muted-foreground">オンライン診療イメージ</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Column Section - コラム */}
+      <section className="py-16 bg-secondary/30">
+        <div className="container">
+          <div className="flex justify-between items-end mb-8">
+            <h2 className="text-2xl font-bold text-primary flex items-center gap-2">
+              <span className="w-2 h-8 bg-primary rounded-full"></span>
+              コラム
+            </h2>
+            <Link href="/column" className="text-primary hover:underline flex items-center gap-1">
+              一覧を見る <ArrowRight className="w-4 h-4" />
+            </Link>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-6">
+            {[
+              { title: "低用量ピルの種類と選び方", cat: "ピル", date: "2024.12.05" },
+              { title: "更年期症状のセルフチェック", cat: "更年期", date: "2024.11.28" },
+              { title: "妊娠初期に気をつけたいこと", cat: "妊娠・出産", date: "2024.11.20" },
+            ].map((article, i) => (
+              <Link key={i} href="/column" className="block group">
+                <div className="bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow">
+                  <div className="bg-gray-200 aspect-[16/9] flex items-center justify-center">
+                    <span className="text-muted-foreground text-sm">記事サムネイル</span>
+                  </div>
+                  <div className="p-4">
+                    <span className="text-xs text-primary font-medium">{article.cat}</span>
+                    <h3 className="font-bold mt-1 group-hover:text-primary transition-colors">{article.title}</h3>
+                    <time className="text-xs text-muted-foreground mt-2 block">{article.date}</time>
+                  </div>
+                </div>
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Access & Hours */}
+      <section className="py-16 bg-white">
         <div className="container">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div className="space-y-6">
