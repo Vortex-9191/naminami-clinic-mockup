@@ -1,37 +1,41 @@
 import Link from "next/link"
+import { Instagram } from "lucide-react"
 
 export function Footer() {
   const footerLinks = [
     {
       title: "クリニックについて",
       links: [
-        { label: "当院の不妊治療", href: "/treatment" },
-        { label: "治療成績", href: "/result" },
-        { label: "院長挨拶", href: "/about" },
-        { label: "アクセス", href: "/access" },
-      ],
-    },
-    {
-      title: "診療案内",
-      links: [
+        { label: "当院の特徴", href: "/about" },
+        { label: "医師紹介", href: "/doctors" },
         { label: "はじめての方へ", href: "/visitor" },
-        { label: "通院中の方へ", href: "/patient" },
-        { label: "不妊治療相談外来", href: "/consultation" },
+        { label: "アクセス・診療時間", href: "/access" },
       ],
     },
     {
-      title: "費用について",
+      title: "診療内容",
       links: [
-        { label: "保険診療", href: "/insurance-covered-price" },
-        { label: "自費診療", href: "/self-paid-price" },
-        { label: "先進医療", href: "/advanced-medical-price" },
+        { label: "産科", href: "/treatment/obstetrics" },
+        { label: "婦人科", href: "/treatment/gynecology" },
+        { label: "女性泌尿器科", href: "/treatment/urology" },
+        { label: "内科", href: "/treatment/internal" },
+        { label: "健康診断・相談", href: "/treatment/checkup" },
+      ],
+    },
+    {
+      title: "コラム",
+      links: [
+        { label: "妊娠・出産", href: "/column?cat=pregnancy" },
+        { label: "ピル", href: "/column?cat=pill" },
+        { label: "更年期", href: "/column?cat=menopause" },
+        { label: "婦人科疾患", href: "/column?cat=gynecology" },
       ],
     },
     {
       title: "その他",
       links: [
         { label: "お知らせ", href: "/news" },
-        { label: "コラム", href: "/column" },
+        { label: "料金について", href: "/price" },
         { label: "よくある質問", href: "/faq" },
         { label: "お問い合わせ", href: "/contact" },
       ],
@@ -39,36 +43,40 @@ export function Footer() {
   ]
 
   return (
-    <footer className="bg-secondary/30 border-t">
+    <footer className="bg-gray-800 text-white pb-20 md:pb-0">
       <div className="container py-12 md:py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8">
-          <div className="lg:col-span-2">
+          <div className="lg:col-span-1">
             <Link href="/" className="flex items-center gap-2 mb-4">
-              <div className="h-8 w-8 rounded-full bg-primary/20 flex items-center justify-center text-primary">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" /></svg>
-              </div>
-              <span className="text-lg font-bold text-primary tracking-tight">なみなみレディースクリニック</span>
+              <span className="text-lg font-bold tracking-tight">レディースクリニック なみなみ</span>
             </Link>
-            <p className="text-sm text-muted-foreground mb-6 leading-relaxed">
-              〒141-0022<br />
-              東京都品川区東五反田1-1-1<br />
-              五反田駅徒歩1分
+            <p className="text-sm text-gray-400 mb-4 leading-relaxed">
+              〒153-0063<br />
+              東京都目黒区目黒1-1-1<br />
+              目黒駅 西口より徒歩4分
             </p>
-            <div className="text-sm text-muted-foreground">
-              <p>TEL: 03-1234-5678</p>
-              <p>受付時間: 9:00 - 18:00 (日・祝休診)</p>
+            <div className="text-sm text-gray-400 mb-4">
+              <p className="font-bold text-white text-lg">TEL: 03-5747-9330</p>
+            </div>
+            <div className="flex gap-3">
+              <a href="https://instagram.com/" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-gray-700 flex items-center justify-center hover:bg-gray-600 transition-colors">
+                <Instagram className="w-5 h-5" />
+              </a>
+              <a href="https://line.me/" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-[#06C755] flex items-center justify-center hover:opacity-80 transition-opacity">
+                <span className="text-xs font-bold">LINE</span>
+              </a>
             </div>
           </div>
 
           {footerLinks.map((group) => (
             <div key={group.title}>
-              <h3 className="font-semibold text-foreground mb-4">{group.title}</h3>
-              <ul className="space-y-3">
+              <h3 className="font-semibold mb-4">{group.title}</h3>
+              <ul className="space-y-2">
                 {group.links.map((link) => (
                   <li key={link.href}>
                     <Link
                       href={link.href}
-                      className="text-sm text-muted-foreground hover:text-primary transition-colors"
+                      className="text-sm text-gray-400 hover:text-white transition-colors"
                     >
                       {link.label}
                     </Link>
@@ -78,8 +86,16 @@ export function Footer() {
             </div>
           ))}
         </div>
-        <div className="mt-12 pt-8 border-t text-center text-sm text-muted-foreground">
-          © {new Date().getFullYear()} Naminami Ladies Clinic. All rights reserved.
+
+        <div className="mt-12 pt-8 border-t border-gray-700 flex flex-col md:flex-row justify-between items-center gap-4">
+          <div className="flex flex-wrap gap-4 text-xs text-gray-400">
+            <Link href="/privacy" className="hover:text-white">個人情報保護方針</Link>
+            <Link href="/guidelines" className="hover:text-white">医療広告ガイドライン</Link>
+            <Link href="/sitemap-page" className="hover:text-white">サイトマップ</Link>
+          </div>
+          <p className="text-xs text-gray-400">
+            © {new Date().getFullYear()} レディースクリニック なみなみ All rights reserved.
+          </p>
         </div>
       </div>
     </footer>
