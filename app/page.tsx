@@ -37,25 +37,76 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Congestion Status Section */}
+      {/*
+        ============================================
+        【画像】診療時間表
+        - 推奨サイズ: 800x300px（PC用）、400x400px（SP用）
+        - ファイル名: time.png, time-sp.png
+        - 内容: 診療時間の曜日・時間帯を表形式で表示
+        ============================================
+      */}
+      {/* Hours & Congestion Section */}
       <section className="py-8 bg-white border-b">
         <div className="container">
-          <div className="flex flex-col md:flex-row items-start md:items-center gap-4 md:gap-8">
-            <div className="flex items-center gap-2">
-              <Clock className="w-5 h-5 text-primary" />
-              <span className="font-bold">本日の混雑状況</span>
-              <span className="text-sm text-muted-foreground">
-                {new Date().toLocaleDateString('ja-JP', { month: 'long', day: 'numeric', weekday: 'short' })}
-              </span>
-            </div>
-            <div className="flex flex-wrap gap-4">
-              <div className="flex items-center gap-2 bg-red-50 px-3 py-1 rounded-full">
-                <span className="text-sm">午前 9:00〜11:00</span>
-                <span className="text-xs text-red-600 font-medium">混雑しています</span>
+          <div className="grid md:grid-cols-2 gap-8 items-start">
+            {/* 診療時間画像 */}
+            <div>
+              <h2 className="text-lg font-bold text-primary mb-4 flex items-center gap-2">
+                <Clock className="w-5 h-5" />
+                診療時間
+              </h2>
+              {/* PC版 */}
+              <div className="hidden md:block">
+                <div className="bg-gray-200 rounded-xl h-[150px] flex flex-col items-center justify-center border-2 border-dashed border-gray-300">
+                  <span className="text-muted-foreground font-medium">【画像】</span>
+                  <span className="text-muted-foreground text-sm">time.png（診療時間表）</span>
+                  <span className="text-xs text-gray-400 mt-1">推奨: 800x300px</span>
+                </div>
               </div>
-              <div className="flex items-center gap-2 bg-red-50 px-3 py-1 rounded-full">
-                <span className="text-sm">午後 14:20〜17:00</span>
-                <span className="text-xs text-red-600 font-medium">混雑しています</span>
+              {/* SP版 */}
+              <div className="md:hidden">
+                <div className="bg-gray-200 rounded-xl h-[200px] flex flex-col items-center justify-center border-2 border-dashed border-gray-300">
+                  <span className="text-muted-foreground font-medium">【画像】</span>
+                  <span className="text-muted-foreground text-sm">time-sp.png（診療時間表）</span>
+                  <span className="text-xs text-gray-400 mt-1">推奨: 400x400px</span>
+                </div>
+              </div>
+              <p className="text-xs text-muted-foreground mt-3">
+                当院は原則予約制です。スムーズな診療のため、2週間前迄のご予約をお勧めします。
+              </p>
+            </div>
+
+            {/* 混雑状況 */}
+            <div>
+              <h2 className="text-lg font-bold text-primary mb-4">
+                {new Date().toLocaleDateString('ja-JP', { month: 'long', day: 'numeric', weekday: 'long' })}の診療状況
+              </h2>
+              <div className="space-y-3">
+                {[
+                  { time: "9:00〜11:00", level: "混雑" },
+                  { time: "13:00〜14:20", level: "混雑" },
+                  { time: "14:20〜17:00", level: "混雑" },
+                  { time: "17:00〜17:30", level: "混雑" },
+                ].map((slot, i) => (
+                  <div key={i} className="flex items-center justify-between bg-gray-50 px-4 py-2 rounded-lg">
+                    <span className="text-sm font-medium">{slot.time}</span>
+                    <div className="flex items-center gap-2">
+                      {/*
+                        ============================================
+                        【アイコン】混雑レベルインジケーター
+                        - ファイル名: congestion-level01.svg（空いています）
+                                     congestion-level02.svg（やや混雑）
+                                     congestion-level03.svg（混雑しています）
+                        - サイズ: 80x24px程度
+                        ============================================
+                      */}
+                      <div className="w-16 h-4 bg-red-100 rounded flex items-center justify-center border border-dashed border-red-300">
+                        <span className="text-[8px] text-red-400">level03.svg</span>
+                      </div>
+                      <span className="text-xs text-red-600 font-medium">混雑しています</span>
+                    </div>
+                  </div>
+                ))}
               </div>
             </div>
           </div>
