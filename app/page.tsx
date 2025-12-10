@@ -241,6 +241,15 @@ export default function Home() {
             </div>
           </div>
 
+          {/*
+            ============================================
+            【イラスト】診療内容サムネイル
+            - 推奨サイズ: 200x150px / WebP or PNG
+            - 形式: イラスト（写真ではない）
+            - ファイル名: menu-{項目名}.webp
+            - 内容: 各診療内容を表すイラスト
+            ============================================
+          */}
           {/* 診療内容から探す */}
           <div>
             <h3 className="text-xl font-bold text-primary mb-6 flex items-center gap-2">
@@ -257,10 +266,10 @@ export default function Home() {
                   borderColor: "border-pink-200",
                   tagColor: "bg-pink-100 text-pink-700",
                   items: [
-                    { name: "妊婦健診", file: "menu-prenatal.jpg", href: "/treatment/obstetrics/prenatal" },
-                    { name: "NIPT", file: "menu-nipt.jpg", href: "/treatment/obstetrics/nipt" },
-                    { name: "つわり外来", file: "menu-morning-sickness.jpg", href: "/treatment/obstetrics/morning-sickness" },
-                    { name: "妊娠相談", file: "menu-pregnancy.jpg", href: "/treatment/obstetrics/pregnancy-consultation" },
+                    { name: "妊婦健診", file: "menu-prenatal.webp", href: "/treatment/obstetrics/prenatal" },
+                    { name: "NIPT", file: "menu-nipt.webp", href: "/treatment/obstetrics/nipt" },
+                    { name: "つわり外来", file: "menu-morning-sickness.webp", href: "/treatment/obstetrics/morning-sickness" },
+                    { name: "妊娠相談", file: "menu-pregnancy.webp", href: "/treatment/obstetrics/pregnancy-consultation" },
                   ]
                 },
                 {
@@ -269,16 +278,16 @@ export default function Home() {
                   borderColor: "border-purple-200",
                   tagColor: "bg-purple-100 text-purple-700",
                   items: [
-                    { name: "低用量ピル", file: "menu-pill.jpg", href: "/treatment/gynecology/pill" },
-                    { name: "アフターピル", file: "menu-emergency-pill.jpg", href: "/treatment/gynecology/emergency-pill" },
-                    { name: "月経移動", file: "menu-period-delay.jpg", href: "/treatment/gynecology/period-delay" },
-                    { name: "月経トラブル", file: "menu-menstrual.jpg", href: "/treatment/gynecology/menstrual" },
-                    { name: "PMS・PMDD", file: "menu-pms.jpg", href: "/treatment/gynecology/pms" },
-                    { name: "更年期症候群", file: "menu-menopause.jpg", href: "/treatment/gynecology/menopause" },
-                    { name: "不妊症相談", file: "menu-infertility.jpg", href: "/treatment/gynecology/infertility" },
-                    { name: "ブライダルチェック", file: "menu-bridal.jpg", href: "/treatment/gynecology/bridal" },
-                    { name: "性感染症検査", file: "menu-std.jpg", href: "/treatment/gynecology/std" },
-                    { name: "おりもの・かゆみ", file: "menu-discharge.jpg", href: "/treatment/gynecology/discharge" },
+                    { name: "低用量ピル", file: "menu-pill.webp", href: "/treatment/gynecology/pill" },
+                    { name: "アフターピル", file: "menu-emergency-pill.webp", href: "/treatment/gynecology/emergency-pill" },
+                    { name: "月経移動", file: "menu-period-delay.webp", href: "/treatment/gynecology/period-delay" },
+                    { name: "月経トラブル", file: "menu-menstrual.webp", href: "/treatment/gynecology/menstrual" },
+                    { name: "PMS・PMDD", file: "menu-pms.webp", href: "/treatment/gynecology/pms" },
+                    { name: "更年期症候群", file: "menu-menopause.webp", href: "/treatment/gynecology/menopause" },
+                    { name: "不妊症相談", file: "menu-infertility.webp", href: "/treatment/gynecology/infertility" },
+                    { name: "ブライダルチェック", file: "menu-bridal.webp", href: "/treatment/gynecology/bridal" },
+                    { name: "性感染症検査", file: "menu-std.webp", href: "/treatment/gynecology/std" },
+                    { name: "おりもの・かゆみ", file: "menu-discharge.webp", href: "/treatment/gynecology/discharge" },
                   ]
                 },
                 {
@@ -287,9 +296,9 @@ export default function Home() {
                   borderColor: "border-blue-200",
                   tagColor: "bg-blue-100 text-blue-700",
                   items: [
-                    { name: "膀胱炎", file: "menu-cystitis.jpg", href: "/treatment/urology/cystitis" },
-                    { name: "尿失禁", file: "menu-incontinence.jpg", href: "/treatment/urology/incontinence" },
-                    { name: "インティマレーザー", file: "menu-intima-laser.jpg", href: "/treatment/urology/intima-laser" },
+                    { name: "膀胱炎", file: "menu-cystitis.webp", href: "/treatment/urology/cystitis" },
+                    { name: "尿失禁", file: "menu-incontinence.webp", href: "/treatment/urology/incontinence" },
+                    { name: "インティマレーザー", file: "menu-intima-laser.webp", href: "/treatment/urology/intima-laser" },
                   ]
                 },
                 {
@@ -298,9 +307,9 @@ export default function Home() {
                   borderColor: "border-green-200",
                   tagColor: "bg-green-100 text-green-700",
                   items: [
-                    { name: "片頭痛", file: "menu-migraine.jpg", href: "/treatment/internal/migraine" },
-                    { name: "生活習慣病", file: "menu-lifestyle.jpg", href: "/treatment/internal/lifestyle" },
-                    { name: "糖尿病", file: "menu-diabetes.jpg", href: "/treatment/internal/diabetes" },
+                    { name: "片頭痛", file: "menu-migraine.webp", href: "/treatment/internal/migraine" },
+                    { name: "生活習慣病", file: "menu-lifestyle.webp", href: "/treatment/internal/lifestyle" },
+                    { name: "糖尿病", file: "menu-diabetes.webp", href: "/treatment/internal/diabetes" },
                   ]
                 },
                 {
@@ -309,9 +318,9 @@ export default function Home() {
                   borderColor: "border-orange-200",
                   tagColor: "bg-orange-100 text-orange-700",
                   items: [
-                    { name: "子宮頸がん検診", file: "menu-cervical.jpg", href: "/treatment/checkup/cervical" },
-                    { name: "HPVワクチン", file: "menu-hpv.jpg", href: "/treatment/checkup/hpv" },
-                    { name: "プレコンセプションチェック", file: "menu-preconception.jpg", href: "/treatment/checkup/preconception" },
+                    { name: "子宮頸がん検診", file: "menu-cervical.webp", href: "/treatment/checkup/cervical" },
+                    { name: "HPVワクチン", file: "menu-hpv.webp", href: "/treatment/checkup/hpv" },
+                    { name: "プレコンセプションチェック", file: "menu-preconception.webp", href: "/treatment/checkup/preconception" },
                   ]
                 },
               ].map((group, gi) => (
@@ -323,8 +332,8 @@ export default function Home() {
                     {group.items.map((item, i) => (
                       <Link key={i} href={item.href} className="block group">
                         <div className="bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-all">
-                          <div className="bg-gray-200 aspect-[4/3] flex flex-col items-center justify-center border-b-2 border-dashed border-gray-300">
-                            <span className="text-[9px] text-gray-500">【画像】</span>
+                          <div className="bg-gray-100 aspect-[4/3] flex flex-col items-center justify-center border-b-2 border-dashed border-gray-300">
+                            <span className="text-[9px] text-gray-500">【イラスト】</span>
                             <span className="text-[7px] text-gray-400 text-center px-1">{item.file}</span>
                           </div>
                           <div className="p-2">
