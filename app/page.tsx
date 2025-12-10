@@ -195,69 +195,94 @@ export default function Home() {
           - icon-internal.svg（内科）
           - icon-checkup.svg（健康診断・相談）
         - 内容: 各診療科目を表す独自イラスト
+
+        【イラスト】診療内容サムネイル（各項目）
+        - 推奨サイズ: 200x150px
+        - 形式: JPG/PNG/イラスト
+        - ファイル名: menu-{項目名}.jpg
+        - 内容: 各診療内容を表す写真またはイラスト
         ============================================
       */}
-      {/* Medical Departments Section */}
+      {/* Medical Menu Section */}
       <section className="py-16">
         <div className="container">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-primary mb-4">診療内容</h2>
+            <h2 className="text-3xl font-bold text-primary mb-4">診療メニュー</h2>
             <p className="text-muted-foreground">
               女性のライフステージに合わせた幅広い診療を行っています
             </p>
           </div>
 
-          <div className="grid grid-cols-2 md:grid-cols-5 gap-4 md:gap-6">
-            {[
-              {
-                title: "産科",
-                desc: "妊婦健診・NIPT・出生前診断",
-                href: "/treatment/obstetrics",
-                color: "bg-pink-50",
-                iconFile: "icon-obstetrics.svg",
-              },
-              {
-                title: "婦人科",
-                desc: "月経トラブル・ピル・更年期",
-                href: "/treatment/gynecology",
-                color: "bg-purple-50",
-                iconFile: "icon-gynecology.svg",
-              },
-              {
-                title: "女性泌尿器科",
-                desc: "膀胱炎・尿失禁・レーザー治療",
-                href: "/treatment/urology",
-                color: "bg-blue-50",
-                iconFile: "icon-urology.svg",
-              },
-              {
-                title: "内科",
-                desc: "片頭痛・生活習慣病・糖尿病",
-                href: "/treatment/internal",
-                color: "bg-green-50",
-                iconFile: "icon-internal.svg",
-              },
-              {
-                title: "健康診断・相談",
-                desc: "がん検診・ワクチン・ドック",
-                href: "/treatment/checkup",
-                color: "bg-orange-50",
-                iconFile: "icon-checkup.svg",
-              },
-            ].map((dept, i) => (
-              <Link key={i} href={dept.href} className="block">
-                <div className="bg-white p-6 rounded-xl shadow-sm border border-gray-100 hover:shadow-md transition-all hover:-translate-y-1 text-center h-full">
-                  <div className={`w-16 h-16 mx-auto mb-4 rounded-full ${dept.color} flex flex-col items-center justify-center border-2 border-dashed border-gray-300`}>
-                    <span className="text-[8px] text-gray-500">【イラスト】</span>
-                    <span className="text-[7px] text-gray-400">{dept.iconFile}</span>
+          {/* 診療科目から探す */}
+          <div className="mb-12">
+            <h3 className="text-xl font-bold text-primary mb-6 flex items-center gap-2">
+              <span className="w-1 h-6 bg-primary rounded-full"></span>
+              診療科目から探す
+            </h3>
+            <div className="grid grid-cols-2 md:grid-cols-5 gap-4 md:gap-6">
+              {[
+                { title: "産科", desc: "妊婦健診・NIPT・出生前診断", href: "/treatment/obstetrics", color: "bg-pink-50", iconFile: "icon-obstetrics.svg" },
+                { title: "婦人科", desc: "月経トラブル・ピル・更年期", href: "/treatment/gynecology", color: "bg-purple-50", iconFile: "icon-gynecology.svg" },
+                { title: "女性泌尿器科", desc: "膀胱炎・尿失禁・レーザー治療", href: "/treatment/urology", color: "bg-blue-50", iconFile: "icon-urology.svg" },
+                { title: "内科", desc: "片頭痛・生活習慣病・糖尿病", href: "/treatment/internal", color: "bg-green-50", iconFile: "icon-internal.svg" },
+                { title: "健康診断・相談", desc: "がん検診・ワクチン・ドック", href: "/treatment/checkup", color: "bg-orange-50", iconFile: "icon-checkup.svg" },
+              ].map((dept, i) => (
+                <Link key={i} href={dept.href} className="block">
+                  <div className="bg-white p-6 rounded-xl shadow-sm border border-gray-100 hover:shadow-md transition-all hover:-translate-y-1 text-center h-full">
+                    <div className={`w-16 h-16 mx-auto mb-4 rounded-full ${dept.color} flex flex-col items-center justify-center border-2 border-dashed border-gray-300`}>
+                      <span className="text-[8px] text-gray-500">【イラスト】</span>
+                      <span className="text-[7px] text-gray-400">{dept.iconFile}</span>
+                    </div>
+                    <h3 className="text-lg font-bold text-foreground mb-2">{dept.title}</h3>
+                    <p className="text-sm text-muted-foreground leading-relaxed">{dept.desc}</p>
                   </div>
-                  <h3 className="text-lg font-bold text-foreground mb-2">{dept.title}</h3>
-                  <p className="text-sm text-muted-foreground leading-relaxed">
-                    {dept.desc}
-                  </p>
-                </div>
-              </Link>
-            ))}
+                </Link>
+              ))}
+            </div>
+          </div>
+
+          {/* 診療内容から探す */}
+          <div>
+            <h3 className="text-xl font-bold text-primary mb-6 flex items-center gap-2">
+              <span className="w-1 h-6 bg-primary rounded-full"></span>
+              診療内容から探す
+            </h3>
+            <div className="grid grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-3 md:gap-4">
+              {[
+                { name: "妊婦健診", file: "menu-prenatal.jpg", href: "/treatment/obstetrics/prenatal" },
+                { name: "NIPT", file: "menu-nipt.jpg", href: "/treatment/obstetrics/nipt" },
+                { name: "つわり外来", file: "menu-morning-sickness.jpg", href: "/treatment/obstetrics/morning-sickness" },
+                { name: "低用量ピル", file: "menu-pill.jpg", href: "/treatment/gynecology/pill" },
+                { name: "アフターピル", file: "menu-emergency-pill.jpg", href: "/treatment/gynecology/emergency-pill" },
+                { name: "月経移動", file: "menu-period-delay.jpg", href: "/treatment/gynecology/period-delay" },
+                { name: "月経トラブル", file: "menu-menstrual.jpg", href: "/treatment/gynecology/menstrual" },
+                { name: "PMS・PMDD", file: "menu-pms.jpg", href: "/treatment/gynecology/pms" },
+                { name: "更年期症候群", file: "menu-menopause.jpg", href: "/treatment/gynecology/menopause" },
+                { name: "不妊症相談", file: "menu-infertility.jpg", href: "/treatment/gynecology/infertility" },
+                { name: "ブライダルチェック", file: "menu-bridal.jpg", href: "/treatment/gynecology/bridal" },
+                { name: "性感染症検査", file: "menu-std.jpg", href: "/treatment/gynecology/std" },
+                { name: "子宮頸がん検診", file: "menu-cervical.jpg", href: "/treatment/checkup/cervical" },
+                { name: "おりもの・かゆみ", file: "menu-discharge.jpg", href: "/treatment/gynecology/discharge" },
+                { name: "膀胱炎", file: "menu-cystitis.jpg", href: "/treatment/urology/cystitis" },
+                { name: "尿失禁", file: "menu-incontinence.jpg", href: "/treatment/urology/incontinence" },
+                { name: "インティマレーザー", file: "menu-intima-laser.jpg", href: "/treatment/urology/intima-laser" },
+                { name: "HPVワクチン", file: "menu-hpv.jpg", href: "/treatment/checkup/hpv" },
+                { name: "片頭痛", file: "menu-migraine.jpg", href: "/treatment/internal/migraine" },
+                { name: "オンライン診療", file: "menu-online.jpg", href: "/online" },
+              ].map((item, i) => (
+                <Link key={i} href={item.href} className="block group">
+                  <div className="bg-white rounded-lg overflow-hidden shadow-sm border border-gray-100 hover:shadow-md transition-all">
+                    <div className="bg-gray-200 aspect-[4/3] flex flex-col items-center justify-center border-b-2 border-dashed border-gray-300">
+                      <span className="text-[9px] text-gray-500">【画像】</span>
+                      <span className="text-[7px] text-gray-400 text-center px-1">{item.file}</span>
+                    </div>
+                    <div className="p-2">
+                      <p className="text-xs font-medium text-center group-hover:text-primary transition-colors">{item.name}</p>
+                    </div>
+                  </div>
+                </Link>
+              ))}
+            </div>
           </div>
 
           <div className="mt-10 text-center">
