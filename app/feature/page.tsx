@@ -19,6 +19,7 @@ export default function AboutPage() {
           <div className="flex flex-wrap gap-2 md:gap-4 justify-center">
             {[
               { label: "ぷかぷかの特徴", href: "#features" },
+              { label: "受けられる治療", href: "#treatments" },
               { label: "設備紹介", href: "#facility" },
               { label: "院長メッセージ", href: "#message" },
               { label: "当院の取り組み", href: "#initiatives" },
@@ -94,6 +95,82 @@ export default function AboutPage() {
 
       {/*
         ============================================
+        【イラスト】受けられる治療セクション（3カテゴリ）
+        - 推奨サイズ: 120x120px / SVG
+        - ファイル名: icon-gynecology.svg, icon-general-fertility.svg, icon-advanced-fertility.svg
+        - 内容: 各診療カテゴリを表すイラストアイコン
+        ============================================
+      */}
+      {/* Treatments Section */}
+      <section id="treatments" className="py-16 bg-secondary/30 scroll-mt-32">
+        <div className="container">
+          <h2 className="text-2xl font-bold text-primary text-center mb-4">受けられる治療</h2>
+          <p className="text-center text-muted-foreground mb-12">
+            当院では不妊治療を中心に、幅広い婦人科診療に対応しています
+          </p>
+
+          <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+            {[
+              {
+                title: "一般産婦人科",
+                icon: "icon-gynecology.svg",
+                color: "bg-pink-50 border-pink-200",
+                iconBg: "bg-pink-100",
+                items: ["月経関連トラブル", "避妊相談・ピル処方", "子宮頸がん検診", "妊娠判定"],
+                href: "/general-gynecology",
+              },
+              {
+                title: "一般不妊治療",
+                icon: "icon-general-fertility.svg",
+                color: "bg-blue-50 border-blue-200",
+                iconBg: "bg-blue-100",
+                items: ["タイミング療法", "人工授精", "排卵誘発", "原因不明不妊症"],
+                href: "/general-fertility",
+              },
+              {
+                title: "高度不妊治療",
+                icon: "icon-advanced-fertility.svg",
+                color: "bg-purple-50 border-purple-200",
+                iconBg: "bg-purple-100",
+                items: ["体外受精", "顕微授精", "卵子凍結", "胚凍結", "着床前診断"],
+                href: "/advanced-fertility",
+              },
+            ].map((category, i) => (
+              <Link
+                key={i}
+                href={category.href}
+                className={`${category.color} border-2 rounded-2xl p-6 hover:shadow-lg transition-shadow group`}
+              >
+                <div className={`w-20 h-20 ${category.iconBg} rounded-full mx-auto mb-4 flex flex-col items-center justify-center border-2 border-dashed border-gray-300`}>
+                  <span className="text-[8px] text-gray-500">【イラスト】</span>
+                  <span className="text-[7px] text-gray-400">{category.icon}</span>
+                </div>
+                <h3 className="text-lg font-bold text-primary text-center mb-4 group-hover:underline">{category.title}</h3>
+                <ul className="space-y-2">
+                  {category.items.map((item, ii) => (
+                    <li key={ii} className="text-sm text-muted-foreground flex items-center gap-2">
+                      <span className="w-1.5 h-1.5 bg-primary rounded-full flex-shrink-0"></span>
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+              </Link>
+            ))}
+          </div>
+
+          <div className="text-center mt-10">
+            <Link
+              href="/treatment"
+              className="inline-block border-2 border-primary text-primary px-8 py-3 rounded-full font-bold hover:bg-primary hover:text-white transition-colors"
+            >
+              診療内容一覧を見る
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/*
+        ============================================
         【画像】設備紹介セクション（10枚）
         - 推奨サイズ: 400x300px
         - ファイル名: facility-01.jpg ~ facility-10.jpg
@@ -101,7 +178,7 @@ export default function AboutPage() {
         ============================================
       */}
       {/* Facility Section */}
-      <section id="facility" className="py-16 bg-secondary/30 scroll-mt-32">
+      <section id="facility" className="py-16 scroll-mt-32">
         <div className="container">
           <h2 className="text-2xl font-bold text-primary text-center mb-12">設備紹介</h2>
 
