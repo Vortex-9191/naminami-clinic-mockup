@@ -55,6 +55,7 @@ export function Header() {
     { label: "医師紹介", href: "/doctors" },
     { label: "料金について", href: "/price" },
     { label: "アクセス・診療時間", href: "/access" },
+    { label: "通院中の方へ", href: "/patient" },
     { label: "コラム", href: "/column" },
     { label: "よくある質問", href: "/faq" },
   ]
