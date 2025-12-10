@@ -4,6 +4,7 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion"
+import { MapSection } from "@/components/clinic/MapSection"
 
 export default function FAQPage() {
   const faqs = [
@@ -51,6 +52,12 @@ export default function FAQPage() {
           ))}
         </Accordion>
       </div>
+
+      {/* Map Section */}
+      <MapSection />
+
+      {/* Bottom spacing for fixed buttons */}
+      <div className="h-24 md:h-28"></div>
     </div>
   )
 }

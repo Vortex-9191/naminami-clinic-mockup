@@ -1,5 +1,6 @@
 import { MapPin, Phone, Clock } from "lucide-react"
 import Link from "next/link"
+import { MapSection } from "@/components/clinic/MapSection"
 
 export default function AboutPage() {
   return (
@@ -321,6 +322,9 @@ export default function AboutPage() {
           </div>
         </div>
       </section>
+
+      {/* Map Section */}
+      <MapSection />
 
       {/* Bottom spacing for fixed buttons */}
       <div className="h-24 md:h-28"></div>

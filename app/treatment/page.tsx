@@ -1,4 +1,5 @@
 import Link from "next/link"
+import { MapSection } from "@/components/clinic/MapSection"
 
 export default function TreatmentPage() {
   const departments = [
@@ -209,26 +210,8 @@ export default function TreatmentPage() {
         </div>
       </section>
 
-      {/* Reservation CTA */}
-      <section className="py-12 bg-primary/5">
-        <div className="container">
-          <h2 className="text-xl font-bold text-primary text-center mb-8">ご予約・お問い合わせ</h2>
-          <div className="flex flex-col md:flex-row gap-4 justify-center max-w-2xl mx-auto">
-            <a href="https://line.me/" className="flex-1 bg-[#06C755] text-white py-4 px-6 rounded-xl text-center font-bold hover:opacity-90 transition-opacity">
-              <span className="block text-xs mb-1">24時間ご予約受付</span>
-              <span>LINE予約</span>
-            </a>
-            <a href="#" className="flex-1 bg-primary text-white py-4 px-6 rounded-xl text-center font-bold hover:opacity-90 transition-opacity">
-              <span className="block text-xs mb-1">このまま予約を</span>
-              <span>Web予約</span>
-            </a>
-            <a href="tel:03-5747-9330" className="flex-1 bg-gray-700 text-white py-4 px-6 rounded-xl text-center font-bold hover:opacity-90 transition-opacity">
-              <span className="block text-xs mb-1">電話での問い合わせ</span>
-              <span>03-5747-9330</span>
-            </a>
-          </div>
-        </div>
-      </section>
+      {/* Map Section */}
+      <MapSection />
 
       {/* Bottom spacing for fixed buttons */}
       <div className="h-24 md:h-28"></div>

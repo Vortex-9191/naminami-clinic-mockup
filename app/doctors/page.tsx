@@ -1,4 +1,5 @@
 import Link from "next/link"
+import { MapSection } from "@/components/clinic/MapSection"
 
 export default function DoctorsPage() {
   return (
@@ -145,6 +146,9 @@ export default function DoctorsPage() {
           </div>
         </div>
       </section>
+
+      {/* Map Section */}
+      <MapSection />
 
       {/* Bottom spacing for fixed buttons */}
       <div className="h-24 md:h-28"></div>

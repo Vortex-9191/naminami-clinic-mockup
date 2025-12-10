@@ -1,5 +1,6 @@
 import Link from "next/link"
 import { Search } from "lucide-react"
+import { MapSection } from "@/components/clinic/MapSection"
 
 export default function ColumnPage() {
   // 新着コラム
@@ -206,6 +207,9 @@ export default function ColumnPage() {
           </aside>
         </div>
       </div>
+
+      {/* Map Section */}
+      <MapSection />
 
       {/* Bottom spacing for fixed buttons */}
       <div className="h-24 md:h-28"></div>
