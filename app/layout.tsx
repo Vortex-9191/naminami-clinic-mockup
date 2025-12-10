@@ -1,8 +1,7 @@
 import { Noto_Sans_JP, Zen_Maru_Gothic } from "next/font/google"
 import { Suspense } from "react"
-import { Header } from "@/components/header"
-import { Footer } from "@/components/footer"
-import { MobileNav } from "@/components/mobile-nav"
+import { Header } from "@/components/clinic/Header"
+import { Footer } from "@/components/clinic/Footer"
 import "./globals.css"
 
 const notoSansJP = Noto_Sans_JP({
@@ -25,14 +24,14 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="ja">
-      <body className={`font-sans ${notoSansJP.variable} ${zenMaruGothic.variable} antialiased font-['Zen_Maru_Gothic',_sans-serif]`}>
+      <body className={`font-sans ${notoSansJP.variable} ${zenMaruGothic.variable} antialiased font-['Noto_Sans_JP',_sans-serif]`}>
         <Suspense fallback={<div>Loading...</div>}>
           <Header />
-          {children}
+          <main className="min-h-screen">
+            {children}
+          </main>
           <Footer />
         </Suspense>
-        <MobileNav />
-        {/* Analytics component removed */}
       </body>
     </html>
   )
