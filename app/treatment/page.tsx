@@ -123,6 +123,48 @@ export default function TreatmentPage() {
         </div>
       </section>
 
+      {/* 不妊治療のステップ */}
+      <section className="py-16 bg-secondary/30">
+        <div className="container">
+          <h2 className="text-2xl font-bold text-primary text-center mb-4">不妊治療のステップ</h2>
+          <p className="text-center text-muted-foreground mb-10">
+            患者様の状態に応じて段階的に治療を進めていきます
+          </p>
+
+          <div className="max-w-4xl mx-auto">
+            <div className="grid md:grid-cols-4 gap-4 mb-8">
+              {[
+                { step: 1, title: "タイミング療法", category: "一般不妊治療", color: "bg-blue-100 border-blue-300", href: "/treatment/fertility/timing" },
+                { step: 2, title: "人工授精", category: "一般不妊治療", color: "bg-blue-100 border-blue-300", href: "/treatment/fertility/iui" },
+                { step: 3, title: "体外受精", category: "高度不妊治療", color: "bg-purple-100 border-purple-300", href: "/treatment/advanced-fertility/ivf" },
+                { step: 4, title: "顕微授精", category: "高度不妊治療", color: "bg-purple-100 border-purple-300", href: "/treatment/advanced-fertility/icsi" },
+              ].map((item, i) => (
+                <Link
+                  key={i}
+                  href={item.href}
+                  className={`${item.color} border-2 rounded-xl p-4 text-center hover:shadow-md transition-shadow group`}
+                >
+                  <div className="w-8 h-8 rounded-full bg-primary text-white flex items-center justify-center font-bold text-sm mx-auto mb-2">
+                    {item.step}
+                  </div>
+                  <h3 className="font-bold text-primary group-hover:underline">{item.title}</h3>
+                  <p className="text-xs text-muted-foreground mt-1">{item.category}</p>
+                </Link>
+              ))}
+            </div>
+
+            <div className="text-center">
+              <Link
+                href="/knowledge"
+                className="inline-block bg-primary text-white px-8 py-3 rounded-full font-bold hover:opacity-90 transition-opacity"
+              >
+                不妊治療のステップを詳しく見る
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Online Section */}
       <section id="online" className="py-16 scroll-mt-32">
         <div className="container">
