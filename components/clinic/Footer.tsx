@@ -101,12 +101,7 @@ export function Footer() {
           ))}
         </div>
 
-        <div className="mt-12 pt-8 border-t border-gray-700 flex flex-col md:flex-row justify-between items-center gap-4">
-          <div className="flex flex-wrap gap-4 text-xs text-gray-400">
-            <Link href="/privacy" className="hover:text-white">個人情報保護方針</Link>
-            <Link href="/guidelines" className="hover:text-white">医療広告ガイドライン</Link>
-            <Link href="/sitemap-page" className="hover:text-white">サイトマップ</Link>
-          </div>
+        <div className="mt-12 pt-8 border-t border-gray-700 text-center">
           <p className="text-xs text-gray-400">
             © {new Date().getFullYear()} レディースクリニック ぷかぷか All rights reserved.
           </p>
