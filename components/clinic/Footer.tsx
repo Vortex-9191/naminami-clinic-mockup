@@ -9,6 +9,7 @@ export function Footer() {
       links: [
         { label: "当院の特徴", href: "/feature" },
         { label: "医師紹介", href: "/doctors" },
+        { label: "治療実績", href: "/result" },
         { label: "はじめての方へ", href: "/visitor" },
         { label: "通院中の方へ", href: "/patient" },
         { label: "アクセス・診療時間", href: "/access" },
