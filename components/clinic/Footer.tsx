@@ -5,42 +5,46 @@ export function Footer() {
   const footerLinks = [
     {
       title: "クリニックについて",
+      titleHref: null,
       links: [
         { label: "当院の特徴", href: "/feature" },
         { label: "医師紹介", href: "/doctors" },
         { label: "はじめての方へ", href: "/visitor" },
         { label: "通院中の方へ", href: "/patient" },
         { label: "アクセス・診療時間", href: "/access" },
+        { label: "料金について", href: "/price" },
+        { label: "よくある質問", href: "/faq" },
       ],
     },
     {
-      title: "診療内容",
+      title: "一般産婦人科",
+      titleHref: "/general-gynecology",
       links: [
-        { label: "一般産婦人科", href: "/general-gynecology" },
-        { label: "一般不妊治療", href: "/general-fertility" },
-        { label: "高度不妊治療", href: "/advanced-fertility" },
-        { label: "不妊治療のステップ", href: "/knowledge" },
-        { label: "診療内容一覧", href: "/treatment" },
+        { label: "月経関連トラブル", href: "/treatment/general/menstrual" },
+        { label: "避妊相談・ピル処方", href: "/treatment/general/contraception" },
+        { label: "子宮頸がん検診", href: "/treatment/general/cervical-cancer" },
+        { label: "妊娠判定", href: "/treatment/general/pregnancy-test" },
       ],
     },
     {
-      title: "不妊治療",
+      title: "一般不妊治療",
+      titleHref: "/general-fertility",
       links: [
         { label: "タイミング療法", href: "/treatment/fertility/timing" },
         { label: "人工授精", href: "/treatment/fertility/iui" },
-        { label: "体外受精", href: "/treatment/advanced-fertility/ivf" },
-        { label: "顕微授精", href: "/treatment/advanced-fertility/icsi" },
-        { label: "卵子凍結", href: "/treatment/advanced-fertility/egg-freezing" },
+        { label: "原因不明不妊症", href: "/treatment/fertility/unexplained" },
+        { label: "不妊治療のステップ", href: "/knowledge" },
       ],
     },
     {
-      title: "その他",
+      title: "高度不妊治療",
+      titleHref: "/advanced-fertility",
       links: [
-        { label: "料金について", href: "/price" },
-        { label: "よくある質問", href: "/faq" },
-        { label: "コラム", href: "/column" },
-        { label: "お知らせ", href: "/news" },
-        { label: "お問い合わせ", href: "/contact" },
+        { label: "体外受精", href: "/treatment/advanced-fertility/ivf" },
+        { label: "顕微授精", href: "/treatment/advanced-fertility/icsi" },
+        { label: "卵子凍結", href: "/treatment/advanced-fertility/egg-freezing" },
+        { label: "胚凍結", href: "/treatment/advanced-fertility/embryo-freezing" },
+        { label: "着床前診断", href: "/treatment/advanced-fertility/pgt" },
       ],
     },
   ]
@@ -73,7 +77,13 @@ export function Footer() {
 
           {footerLinks.map((group) => (
             <div key={group.title}>
-              <h3 className="font-semibold mb-4">{group.title}</h3>
+              {group.titleHref ? (
+                <Link href={group.titleHref} className="font-semibold mb-4 block hover:text-gray-300 transition-colors">
+                  {group.title}
+                </Link>
+              ) : (
+                <h3 className="font-semibold mb-4">{group.title}</h3>
+              )}
               <ul className="space-y-2">
                 {group.links.map((link) => (
                   <li key={link.href}>
