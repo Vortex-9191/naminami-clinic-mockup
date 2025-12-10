@@ -6,6 +6,15 @@ import { ArrowRight, MapPin, Phone, Clock, Baby, Heart, Stethoscope, Activity, C
 export default function Home() {
   return (
     <div className="flex flex-col min-h-screen">
+      {/*
+        ============================================
+        【画像】メインビジュアル（ヒーロー画像）
+        - 推奨サイズ: 1920x1080px以上
+        - 形式: JPG/PNG/WebP
+        - ファイル: /public/images/hero.png
+        - 内容: クリニック内観または外観の雰囲気が伝わる写真
+        ============================================
+      */}
       {/* Hero Section */}
       <section className="relative h-[500px] md:h-[600px] w-full overflow-hidden">
         <Image
@@ -95,8 +104,18 @@ export default function Home() {
             </p>
           </div>
           <div className="grid md:grid-cols-2 gap-8 items-center">
-            <div className="bg-gray-200 rounded-2xl h-[300px] flex items-center justify-center">
-              <span className="text-muted-foreground">クリニック外観・内観写真</span>
+            {/*
+              ============================================
+              【画像】クリニック外観・内観写真
+              - 推奨サイズ: 800x600px
+              - 形式: JPG/PNG/WebP
+              - 内容: 院内の雰囲気が伝わる写真
+              ============================================
+            */}
+            <div className="bg-gray-200 rounded-2xl h-[300px] flex flex-col items-center justify-center border-2 border-dashed border-gray-300">
+              <span className="text-muted-foreground font-medium">【画像】</span>
+              <span className="text-muted-foreground text-sm">クリニック外観・内観写真</span>
+              <span className="text-xs text-gray-400 mt-1">推奨: 800x600px</span>
             </div>
             <div className="space-y-4">
               <p className="text-muted-foreground leading-relaxed">
@@ -234,20 +253,29 @@ export default function Home() {
             </p>
           </div>
 
+          {/*
+            ============================================
+            【画像】設備紹介ギャラリー（8枚）
+            - 推奨サイズ: 400x300px（4:3比率）
+            - 形式: JPG/PNG/WebP
+            - ファイル名例: facility-reception.jpg, facility-waiting.jpg など
+            ============================================
+          */}
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
             {[
-              { name: "受付", placeholder: "受付写真" },
-              { name: "待合室", placeholder: "待合室写真" },
-              { name: "診察室", placeholder: "診察室写真" },
-              { name: "内診室", placeholder: "内診室写真" },
-              { name: "処置室", placeholder: "処置室写真" },
-              { name: "レーザー治療室", placeholder: "レーザー治療室写真" },
-              { name: "パウダールーム", placeholder: "パウダールーム写真" },
-              { name: "キッズスペース", placeholder: "キッズスペース写真" },
+              { name: "受付", file: "facility-reception.jpg" },
+              { name: "待合室", file: "facility-waiting.jpg" },
+              { name: "診察室", file: "facility-consultation.jpg" },
+              { name: "内診室", file: "facility-examination.jpg" },
+              { name: "処置室", file: "facility-treatment.jpg" },
+              { name: "レーザー治療室", file: "facility-laser.jpg" },
+              { name: "パウダールーム", file: "facility-powder.jpg" },
+              { name: "キッズスペース", file: "facility-kids.jpg" },
             ].map((facility, i) => (
               <div key={i} className="group">
-                <div className="bg-gray-200 rounded-xl aspect-[4/3] flex items-center justify-center mb-2 group-hover:opacity-80 transition-opacity">
-                  <span className="text-muted-foreground text-sm">{facility.placeholder}</span>
+                <div className="bg-gray-200 rounded-xl aspect-[4/3] flex flex-col items-center justify-center mb-2 group-hover:opacity-80 transition-opacity border-2 border-dashed border-gray-300">
+                  <span className="text-muted-foreground text-xs">【画像】</span>
+                  <span className="text-muted-foreground text-xs">{facility.file}</span>
                 </div>
                 <p className="text-sm font-medium text-center">{facility.name}</p>
               </div>
@@ -280,9 +308,20 @@ export default function Home() {
                 <Link href="/doctors">医師紹介を見る</Link>
               </Button>
             </div>
+            {/*
+              ============================================
+              【画像】院長プロフィール写真
+              - 推奨サイズ: 400x533px（3:4比率）
+              - 形式: JPG/PNG/WebP
+              - ファイル名: doctor-profile.jpg
+              - 内容: 院長の顔写真（白衣姿推奨）
+              ============================================
+            */}
             <div className="order-1 md:order-2">
-              <div className="bg-gray-200 rounded-2xl aspect-[3/4] max-w-[300px] mx-auto flex items-center justify-center">
-                <span className="text-muted-foreground">院長写真</span>
+              <div className="bg-gray-200 rounded-2xl aspect-[3/4] max-w-[300px] mx-auto flex flex-col items-center justify-center border-2 border-dashed border-gray-300">
+                <span className="text-muted-foreground font-medium">【画像】</span>
+                <span className="text-muted-foreground text-sm">doctor-profile.jpg</span>
+                <span className="text-xs text-gray-400 mt-1">推奨: 400x533px</span>
               </div>
             </div>
           </div>
@@ -318,8 +357,19 @@ export default function Home() {
                   <Link href="/online">オンライン診療について詳しく見る</Link>
                 </Button>
               </div>
-              <div className="bg-gray-200 rounded-xl h-[250px] flex items-center justify-center">
-                <span className="text-muted-foreground">オンライン診療イメージ</span>
+              {/*
+                ============================================
+                【画像/イラスト】オンライン診療イメージ
+                - 推奨サイズ: 500x250px
+                - 形式: JPG/PNG/WebP/SVG
+                - ファイル名: online-consultation.png
+                - 内容: スマホやPCで診察を受けるイラスト
+                ============================================
+              */}
+              <div className="bg-gray-200 rounded-xl h-[250px] flex flex-col items-center justify-center border-2 border-dashed border-gray-300">
+                <span className="text-muted-foreground font-medium">【画像/イラスト】</span>
+                <span className="text-muted-foreground text-sm">online-consultation.png</span>
+                <span className="text-xs text-gray-400 mt-1">推奨: 500x250px</span>
               </div>
             </div>
           </div>
@@ -339,16 +389,25 @@ export default function Home() {
             </Link>
           </div>
 
+          {/*
+            ============================================
+            【画像】コラム記事サムネイル（3枚）
+            - 推奨サイズ: 640x360px（16:9比率）
+            - 形式: JPG/PNG/WebP
+            - ファイル名: column-pill.jpg, column-menopause.jpg, column-pregnancy.jpg
+            ============================================
+          */}
           <div className="grid md:grid-cols-3 gap-6">
             {[
-              { title: "低用量ピルの種類と選び方", cat: "ピル", date: "2024.12.05" },
-              { title: "更年期症状のセルフチェック", cat: "更年期", date: "2024.11.28" },
-              { title: "妊娠初期に気をつけたいこと", cat: "妊娠・出産", date: "2024.11.20" },
+              { title: "低用量ピルの種類と選び方", cat: "ピル", date: "2024.12.05", file: "column-pill.jpg" },
+              { title: "更年期症状のセルフチェック", cat: "更年期", date: "2024.11.28", file: "column-menopause.jpg" },
+              { title: "妊娠初期に気をつけたいこと", cat: "妊娠・出産", date: "2024.11.20", file: "column-pregnancy.jpg" },
             ].map((article, i) => (
               <Link key={i} href="/column" className="block group">
                 <div className="bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow">
-                  <div className="bg-gray-200 aspect-[16/9] flex items-center justify-center">
-                    <span className="text-muted-foreground text-sm">記事サムネイル</span>
+                  <div className="bg-gray-200 aspect-[16/9] flex flex-col items-center justify-center border-b-2 border-dashed border-gray-300">
+                    <span className="text-muted-foreground text-xs">【画像】</span>
+                    <span className="text-muted-foreground text-xs">{article.file}</span>
                   </div>
                   <div className="p-4">
                     <span className="text-xs text-primary font-medium">{article.cat}</span>
