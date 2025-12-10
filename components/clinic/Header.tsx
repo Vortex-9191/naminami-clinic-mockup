@@ -79,7 +79,7 @@ export function Header() {
     <header className="sticky top-0 z-50 w-full border-b bg-white/95 backdrop-blur-md">
       <div className="container flex h-20 items-center justify-between">
         <Link href="/" className="flex items-center gap-2">
-          <span className="text-xl font-bold text-primary tracking-tight">レディースクリニック なみなみ</span>
+          <span className="text-xl font-bold text-primary tracking-tight">レディースクリニック ぷかぷか</span>
         </Link>
 
         {/* Desktop Nav */}

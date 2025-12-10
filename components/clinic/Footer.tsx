@@ -48,7 +48,7 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8">
           <div className="lg:col-span-1">
             <Link href="/" className="flex items-center gap-2 mb-4">
-              <span className="text-lg font-bold tracking-tight">レディースクリニック なみなみ</span>
+              <span className="text-lg font-bold tracking-tight">レディースクリニック ぷかぷか</span>
             </Link>
             <p className="text-sm text-gray-400 mb-4 leading-relaxed">
               〒153-0063<br />
@@ -94,7 +94,7 @@ export function Footer() {
             <Link href="/sitemap-page" className="hover:text-white">サイトマップ</Link>
           </div>
           <p className="text-xs text-gray-400">
-            © {new Date().getFullYear()} レディースクリニック なみなみ All rights reserved.
+            © {new Date().getFullYear()} レディースクリニック ぷかぷか All rights reserved.
           </p>
         </div>
       </div>

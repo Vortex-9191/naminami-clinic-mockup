@@ -44,7 +44,7 @@ export default function DoctorsPage() {
 
                   <div className="space-y-4 text-muted-foreground text-sm leading-relaxed">
                     <p>
-                      レディースクリニック なみなみのホームページをご覧いただき、ありがとうございます。
+                      レディースクリニック ぷかぷかのホームページをご覧いただき、ありがとうございます。
                     </p>
                     <p>
                       私はこれまで、こども病院や総合周産期センター、大学病院などで、ハイリスク妊娠・分娩管理、不妊治療、がん治療を担当してまいりました。
@@ -75,7 +75,7 @@ export default function DoctorsPage() {
                   { year: "○○年", content: "○○こども病院 産婦人科" },
                   { year: "○○年", content: "○○総合周産期センター" },
                   { year: "○○年", content: "○○大学病院 産婦人科 助教" },
-                  { year: "2024年", content: "レディースクリニック なみなみ 開院" },
+                  { year: "2024年", content: "レディースクリニック ぷかぷか 開院" },
                 ].map((item, i) => (
                   <div key={i} className="flex gap-4 text-muted-foreground">
                     <span className="font-medium w-16 shrink-0">{item.year}</span>

@@ -159,7 +159,7 @@ export default function AccessPage() {
 
               <div className="space-y-6">
                 <div>
-                  <p className="font-bold text-lg mb-2">レディースクリニック なみなみ</p>
+                  <p className="font-bold text-lg mb-2">レディースクリニック ぷかぷか</p>
                   <p className="text-muted-foreground">
                     〒153-0063<br />
                     東京都目黒区目黒1丁目6−17<br />
@@ -206,7 +206,7 @@ export default function AccessPage() {
                 allowFullScreen
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
-                title="レディースクリニック なみなみ"
+                title="レディースクリニック ぷかぷか"
               />
             </div>
           </div>

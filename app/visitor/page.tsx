@@ -18,7 +18,7 @@ export default function VisitorPage() {
         <div className="container py-4">
           <div className="flex flex-wrap gap-2 md:gap-4 justify-center">
             {[
-              { label: "なみなみの特徴", href: "#features" },
+              { label: "ぷかぷかの特徴", href: "#features" },
               { label: "院長メッセージ", href: "#message" },
               { label: "診療時間", href: "#hours" },
               { label: "アクセス", href: "#access" },
@@ -39,7 +39,7 @@ export default function VisitorPage() {
 
       {/*
         ============================================
-        【画像】なみなみの特徴セクション（3枚）
+        【画像】ぷかぷかの特徴セクション（3枚）
         - 推奨サイズ: 400x300px
         - ファイル名: concept-img01.jpg, concept-img02.jpg, concept-img03.jpg
         - 内容: クリニックの特徴を表す写真
@@ -48,7 +48,7 @@ export default function VisitorPage() {
       {/* Features Section */}
       <section id="features" className="py-16 scroll-mt-32">
         <div className="container">
-          <h2 className="text-2xl font-bold text-primary text-center mb-12">なみなみの特徴</h2>
+          <h2 className="text-2xl font-bold text-primary text-center mb-12">ぷかぷかの特徴</h2>
 
           <div className="grid md:grid-cols-3 gap-8">
             {[
@@ -109,7 +109,7 @@ export default function VisitorPage() {
               </div>
               <div className="space-y-4 text-muted-foreground leading-relaxed">
                 <p>
-                  レディースクリニック なみなみのホームページをご覧いただき、ありがとうございます。
+                  レディースクリニック ぷかぷかのホームページをご覧いただき、ありがとうございます。
                 </p>
                 <p>
                   当院は「女性のなみを理解して」をコンセプトに、女性特有の心身の波（なみ）に寄り添った医療を提供したいという想いから開院いたしました。
@@ -223,7 +223,7 @@ export default function VisitorPage() {
               <div className="flex items-start gap-4 mb-6">
                 <MapPin className="w-6 h-6 text-primary shrink-0 mt-1" />
                 <div>
-                  <p className="font-bold text-lg">レディースクリニック なみなみ</p>
+                  <p className="font-bold text-lg">レディースクリニック ぷかぷか</p>
                   <p className="text-muted-foreground">
                     〒153-0063<br />
                     東京都目黒区目黒1-1-1<br />
@@ -246,7 +246,7 @@ export default function VisitorPage() {
                 allowFullScreen
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
-                title="レディースクリニック なみなみ"
+                title="レディースクリニック ぷかぷか"
               />
             </div>
           </div>

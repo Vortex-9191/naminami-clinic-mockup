@@ -147,9 +147,9 @@ export default function Home() {
       <section className="py-16 bg-secondary/30">
         <div className="container">
           <div className="text-center mb-10">
-            <h2 className="text-3xl font-bold text-primary mb-4">なみなみについて</h2>
+            <h2 className="text-3xl font-bold text-primary mb-4">ぷかぷかについて</h2>
             <p className="text-muted-foreground max-w-2xl mx-auto leading-relaxed">
-              レディースクリニック なみなみは、女性の一生に寄り添うクリニックです。<br />
+              レディースクリニック ぷかぷかは、女性の一生に寄り添うクリニックです。<br />
               思春期から更年期まで、すべてのライフステージにおける女性特有のお悩みに対応いたします。
             </p>
           </div>
@@ -487,7 +487,7 @@ export default function Home() {
               <h2 className="text-3xl font-bold text-primary mb-6">院長メッセージ</h2>
               <div className="space-y-4 text-muted-foreground leading-relaxed">
                 <p>
-                  レディースクリニック なみなみのホームページをご覧いただき、ありがとうございます。
+                  レディースクリニック ぷかぷかのホームページをご覧いただき、ありがとうございます。
                 </p>
                 <p>
                   当院は「女性のなみを理解して」をコンセプトに、女性特有の心身の波（なみ）に寄り添った医療を提供したいという想いから開院いたしました。
@@ -627,7 +627,7 @@ export default function Home() {
                 <div className="flex items-start gap-4">
                   <MapPin className="w-6 h-6 text-primary shrink-0 mt-1" />
                   <div>
-                    <p className="font-bold text-lg">レディースクリニック なみなみ</p>
+                    <p className="font-bold text-lg">レディースクリニック ぷかぷか</p>
                     <p className="text-muted-foreground">
                       〒153-0063<br />
                       東京都目黒区目黒1-1-1<br />
@@ -696,7 +696,7 @@ export default function Home() {
                 allowFullScreen
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
-                title="レディースクリニック なみなみ"
+                title="レディースクリニック ぷかぷか"
               />
             </div>
           </div>
