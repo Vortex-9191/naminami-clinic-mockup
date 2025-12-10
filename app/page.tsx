@@ -217,8 +217,18 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Features Section - 当院の特徴 */}
-      <section className="py-16 bg-secondary/30">
+      {/*
+        ============================================
+        【画像】当院の特徴セクション（横スクロールカルーセル）
+        - 推奨サイズ: 800x500px（PC用）、400x300px（SP用）
+        - ファイル名:
+          - PC用: concept-img01.jpg, concept-img02.jpg, concept-img03.jpg
+          - SP用: concept-img01-sp.jpg, concept-img02-sp.jpg, concept-img03-sp.jpg
+        - 内容: 各コンセプトを表す写真
+        ============================================
+      */}
+      {/* Features Section - 当院の特徴（横スクロールカルーセル） */}
+      <section className="py-16 bg-secondary/30 overflow-hidden">
         <div className="container">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold text-primary mb-4">当院の特徴</h2>
@@ -226,34 +236,66 @@ export default function Home() {
               患者様に安心して通っていただくための3つのこだわり
             </p>
           </div>
+        </div>
 
-          <div className="grid md:grid-cols-3 gap-8">
+        {/* 横スクロールカルーセル */}
+        <div className="relative">
+          <div className="flex gap-6 overflow-x-auto snap-x snap-mandatory scrollbar-hide px-4 md:px-8 pb-4">
             {[
               {
-                title: "全世代の女性に対応",
+                title: "全ての世代の女性のかかりつけ医に",
                 desc: "思春期から更年期まで、女性のライフステージに合わせた診療を提供。産婦人科・婦人科・女性泌尿器科・内科の幅広い診療科目で、あらゆるお悩みに対応します。",
-                icon: "01",
+                file: "concept-img01.jpg",
+                fileSp: "concept-img01-sp.jpg",
               },
               {
-                title: "通いやすさを追求",
+                title: "効率的に、利便性を追求して",
                 desc: "目黒駅から徒歩4分の好立地。平日は17:30まで診療しており、お仕事や学校帰りにも通いやすい環境を整えています。オンライン診療にも対応。",
-                icon: "02",
+                file: "concept-img02.jpg",
+                fileSp: "concept-img02-sp.jpg",
               },
               {
-                title: "居心地の良い空間づくり",
+                title: "新たな居場所として",
                 desc: "清潔感のある院内で、リラックスしてお待ちいただけます。プライバシーに配慮した診察室で、安心してご相談いただける環境を大切にしています。",
-                icon: "03",
+                file: "concept-img03.jpg",
+                fileSp: "concept-img03-sp.jpg",
               },
             ].map((feature, i) => (
-              <div key={i} className="bg-white p-8 rounded-2xl shadow-sm border border-gray-100">
-                <div className="text-4xl font-bold text-primary/20 mb-4">{feature.icon}</div>
-                <h3 className="text-xl font-bold text-foreground mb-4">{feature.title}</h3>
-                <p className="text-muted-foreground leading-relaxed">
-                  {feature.desc}
-                </p>
+              <div
+                key={i}
+                className="flex-shrink-0 w-[85vw] md:w-[600px] snap-center"
+              >
+                <div className="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden h-full">
+                  {/* 画像エリア */}
+                  <div className="bg-gray-200 aspect-[16/10] flex flex-col items-center justify-center border-b-2 border-dashed border-gray-300 relative">
+                    <span className="text-muted-foreground font-medium">【画像】</span>
+                    <span className="text-muted-foreground text-sm">{feature.file}</span>
+                    <span className="text-xs text-gray-400 mt-1">推奨: 800x500px</span>
+                    <span className="absolute bottom-2 right-2 text-[10px] text-gray-400">SP用: {feature.fileSp}</span>
+                  </div>
+                  {/* テキストエリア */}
+                  <div className="p-6 md:p-8">
+                    <h3 className="text-xl font-bold text-primary mb-4">{feature.title}</h3>
+                    <p className="text-muted-foreground leading-relaxed">
+                      {feature.desc}
+                    </p>
+                  </div>
+                </div>
               </div>
             ))}
           </div>
+
+          {/* スクロールインジケーター */}
+          <div className="flex justify-center gap-2 mt-6">
+            {[0, 1, 2].map((i) => (
+              <div key={i} className="w-2 h-2 rounded-full bg-primary/30"></div>
+            ))}
+          </div>
+
+          {/* スクロールヒント */}
+          <p className="text-center text-xs text-muted-foreground mt-4">
+            ← 横にスクロールできます →
+          </p>
         </div>
       </section>
 
