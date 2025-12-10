@@ -50,6 +50,18 @@ export function Header() {
             { name: "原因不明不妊症", href: "/treatment/fertility/unexplained" },
           ]
         },
+        {
+          label: "各種検査",
+          href: "/test",
+          items: [
+            { name: "女性プレコンセプションチェック", href: "/test/preconception-female" },
+            { name: "男性プレコンセプションチェック", href: "/test/preconception-male" },
+            { name: "AMH検査", href: "/test/amh" },
+            { name: "精液検査", href: "/test/semen" },
+            { name: "子宮卵管造影検査", href: "/test/hsg" },
+            { name: "ホルモン検査", href: "/test/hormone" },
+          ]
+        },
       ]
     },
     { label: "医師紹介", href: "/doctors" },
@@ -82,7 +94,7 @@ export function Header() {
               </Link>
               {item.submenu && openSubmenu === item.label && (
                 <div
-                  className="absolute top-full left-0 bg-white shadow-lg rounded-lg border p-4 min-w-[500px] grid grid-cols-3 gap-4"
+                  className="absolute top-full left-0 bg-white shadow-lg rounded-lg border p-4 min-w-[650px] grid grid-cols-4 gap-4"
                   onMouseEnter={() => setOpenSubmenu(item.label)}
                   onMouseLeave={() => setOpenSubmenu(null)}
                 >

@@ -48,12 +48,24 @@ export function Footer() {
         { label: "着床前診断", href: "/treatment/advanced-fertility/pgt" },
       ],
     },
+    {
+      title: "各種検査",
+      titleHref: "/test",
+      links: [
+        { label: "女性プレコンセプションチェック", href: "/test/preconception-female" },
+        { label: "男性プレコンセプションチェック", href: "/test/preconception-male" },
+        { label: "AMH検査", href: "/test/amh" },
+        { label: "精液検査", href: "/test/semen" },
+        { label: "子宮卵管造影検査", href: "/test/hsg" },
+        { label: "ホルモン検査", href: "/test/hormone" },
+      ],
+    },
   ]
 
   return (
     <footer className="bg-gray-800 text-white pb-24 md:pb-28">
       <div className="container py-12 md:py-16">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-8">
           <div className="lg:col-span-1">
             <Link href="/" className="flex items-center gap-2 mb-4">
               <span className="text-lg font-bold tracking-tight">レディースクリニック ぷかぷか</span>
