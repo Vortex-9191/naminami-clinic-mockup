@@ -1,29 +1,28 @@
 import Link from "next/link"
-import Image from "next/image"
 import { Button } from "@/components/ui/button"
-import { ArrowRight, MapPin, Phone, Clock, Baby, Heart, Stethoscope, Activity, ClipboardCheck } from "lucide-react"
+import { ArrowRight, MapPin, Phone, Clock } from "lucide-react"
 
 export default function Home() {
   return (
     <div className="flex flex-col min-h-screen">
       {/*
         ============================================
-        【画像】メインビジュアル（ヒーロー画像）
+        【画像】ファーストビュー（メインビジュアル）
         - 推奨サイズ: 1920x1080px以上
         - 形式: JPG/PNG/WebP
-        - ファイル: /public/images/hero.png
-        - 内容: クリニック内観または外観の雰囲気が伝わる写真
+        - ファイル: /public/images/hero.jpg
+        - 内容: クリニック提供の院内写真（スライド対応可）
+        - 本番サイトではカルーセル形式（複数枚）
         ============================================
       */}
-      {/* Hero Section */}
+      {/* Hero Section - ファーストビュー */}
       <section className="relative h-[500px] md:h-[600px] w-full overflow-hidden">
-        <Image
-          src="/images/hero.png"
-          alt="レディースクリニック なみなみ"
-          fill
-          className="object-cover"
-          priority
-        />
+        <div className="absolute inset-0 bg-gray-300 flex flex-col items-center justify-center border-4 border-dashed border-gray-400">
+          <span className="text-gray-600 font-bold text-lg">【提供画像】</span>
+          <span className="text-gray-600">ファーストビュー / メインビジュアル</span>
+          <span className="text-gray-500 text-sm mt-2">hero.jpg（1920x1080px以上）</span>
+          <span className="text-gray-400 text-xs mt-1">※本番はカルーセル形式で複数枚対応</span>
+        </div>
         <div className="absolute inset-0 bg-gradient-to-r from-black/50 to-transparent flex items-center">
           <div className="container">
             <div className="max-w-2xl space-y-4 p-6 text-white">
@@ -133,6 +132,20 @@ export default function Home() {
         </div>
       </section>
 
+      {/*
+        ============================================
+        【イラスト】診療科目アイコン（5種類）
+        - 推奨サイズ: 120x120px（または SVG）
+        - 形式: PNG/SVG（透過推奨）
+        - ファイル名:
+          - icon-obstetrics.svg（産科）
+          - icon-gynecology.svg（婦人科）
+          - icon-urology.svg（女性泌尿器科）
+          - icon-internal.svg（内科）
+          - icon-checkup.svg（健康診断・相談）
+        - 内容: 各診療科目を表す独自イラスト
+        ============================================
+      */}
       {/* Medical Departments Section */}
       <section className="py-16">
         <div className="container">
@@ -148,43 +161,44 @@ export default function Home() {
               {
                 title: "産科",
                 desc: "妊婦健診・NIPT・出生前診断",
-                icon: Baby,
                 href: "/treatment/obstetrics",
-                color: "bg-pink-50 text-pink-600",
+                color: "bg-pink-50",
+                iconFile: "icon-obstetrics.svg",
               },
               {
                 title: "婦人科",
                 desc: "月経トラブル・ピル・更年期",
-                icon: Heart,
                 href: "/treatment/gynecology",
-                color: "bg-purple-50 text-purple-600",
+                color: "bg-purple-50",
+                iconFile: "icon-gynecology.svg",
               },
               {
                 title: "女性泌尿器科",
                 desc: "膀胱炎・尿失禁・レーザー治療",
-                icon: Stethoscope,
                 href: "/treatment/urology",
-                color: "bg-blue-50 text-blue-600",
+                color: "bg-blue-50",
+                iconFile: "icon-urology.svg",
               },
               {
                 title: "内科",
                 desc: "片頭痛・生活習慣病・糖尿病",
-                icon: Activity,
                 href: "/treatment/internal",
-                color: "bg-green-50 text-green-600",
+                color: "bg-green-50",
+                iconFile: "icon-internal.svg",
               },
               {
                 title: "健康診断・相談",
                 desc: "がん検診・ワクチン・ドック",
-                icon: ClipboardCheck,
                 href: "/treatment/checkup",
-                color: "bg-orange-50 text-orange-600",
+                color: "bg-orange-50",
+                iconFile: "icon-checkup.svg",
               },
             ].map((dept, i) => (
               <Link key={i} href={dept.href} className="block">
                 <div className="bg-white p-6 rounded-xl shadow-sm border border-gray-100 hover:shadow-md transition-all hover:-translate-y-1 text-center h-full">
-                  <div className={`w-16 h-16 mx-auto mb-4 rounded-full ${dept.color} flex items-center justify-center`}>
-                    <dept.icon className="w-8 h-8" />
+                  <div className={`w-16 h-16 mx-auto mb-4 rounded-full ${dept.color} flex flex-col items-center justify-center border-2 border-dashed border-gray-300`}>
+                    <span className="text-[8px] text-gray-500">【イラスト】</span>
+                    <span className="text-[7px] text-gray-400">{dept.iconFile}</span>
                   </div>
                   <h3 className="text-lg font-bold text-foreground mb-2">{dept.title}</h3>
                   <p className="text-sm text-muted-foreground leading-relaxed">
