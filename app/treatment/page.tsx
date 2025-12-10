@@ -71,6 +71,12 @@ export default function TreatmentPage() {
                 {item.label}
               </a>
             ))}
+            <Link
+              href="/knowledge"
+              className="px-4 py-2 text-sm rounded-full bg-primary/10 text-primary font-medium hover:bg-primary/20 transition-colors"
+            >
+              不妊治療のステップ →
+            </Link>
           </div>
         </div>
       </div>
