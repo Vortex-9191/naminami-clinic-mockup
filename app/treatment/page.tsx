@@ -45,15 +45,6 @@ export default function TreatmentPage() {
     },
   ]
 
-  const popularTreatments = [
-    { name: "体外受精", desc: "高度不妊治療の中心的な治療法", href: "/treatment/advanced-fertility/ivf" },
-    { name: "顕微授精", desc: "精子を直接卵子に注入する高度な治療", href: "/treatment/advanced-fertility/icsi" },
-    { name: "人工授精", desc: "タイミング法の次のステップ", href: "/treatment/fertility/iui" },
-    { name: "卵子凍結", desc: "将来の妊娠に備えて", href: "/treatment/advanced-fertility/egg-freezing" },
-    { name: "着床前診断", desc: "染色体異常の検査", href: "/treatment/advanced-fertility/pgt" },
-    { name: "オンライン診療", desc: "ご自宅から受診可能", href: "/online" },
-  ]
-
   return (
     <div className="flex flex-col">
       {/* Page Header */}
@@ -70,7 +61,6 @@ export default function TreatmentPage() {
           <div className="flex flex-wrap gap-2 md:gap-4 justify-center">
             {[
               { label: "診療科目から探す", href: "#departments" },
-              { label: "人気の診療", href: "#popular" },
               { label: "オンライン診療", href: "#online" },
             ].map((item) => (
               <a
@@ -122,27 +112,6 @@ export default function TreatmentPage() {
                   ))}
                 </ul>
               </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Popular Treatments Section */}
-      <section id="popular" className="py-16 bg-secondary/30 scroll-mt-32">
-        <div className="container">
-          <h2 className="text-2xl font-bold text-primary text-center mb-4">人気の診療</h2>
-          <p className="text-center text-muted-foreground mb-12">多くの患者様にご利用いただいている診療内容です</p>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
-            {popularTreatments.map((item, i) => (
-              <Link
-                key={i}
-                href={item.href}
-                className="bg-white p-6 rounded-xl shadow-sm border border-gray-100 hover:shadow-md transition-shadow group"
-              >
-                <h3 className="font-bold text-primary mb-2 group-hover:underline">{item.name}</h3>
-                <p className="text-sm text-muted-foreground">{item.desc}</p>
-              </Link>
             ))}
           </div>
         </div>

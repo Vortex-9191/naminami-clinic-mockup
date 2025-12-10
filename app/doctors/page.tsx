@@ -2,124 +2,184 @@ import Link from "next/link"
 import { MapSection } from "@/components/clinic/MapSection"
 
 export default function DoctorsPage() {
+  const doctors = [
+    {
+      name: "岩﨑 〇〇",
+      nameKana: "いわさき ○○",
+      role: "院長",
+      image: "doctor-iwasaki.jpg",
+      qualifications: ["日本産科婦人科学会専門医", "日本生殖医学会生殖医療専門医"],
+      message: "不妊治療は患者様お一人おひとりの状況が異なります。最新の医療技術と丁寧なカウンセリングで、皆様の妊娠・出産をサポートいたします。",
+      career: [
+        { year: "○○年", content: "○○大学医学部 卒業" },
+        { year: "○○年", content: "○○大学病院 産婦人科" },
+        { year: "○○年", content: "○○クリニック 勤務" },
+        { year: "2024年", content: "レディースクリニック ぷかぷか 開院" },
+      ],
+    },
+    {
+      name: "佐竹 〇〇",
+      nameKana: "さたけ ○○",
+      role: "医師",
+      image: "doctor-satake.jpg",
+      qualifications: ["日本産科婦人科学会専門医"],
+      message: "女性の健康に関するお悩みに、親身になって対応いたします。お気軽にご相談ください。",
+      career: [
+        { year: "○○年", content: "○○大学医学部 卒業" },
+        { year: "○○年", content: "○○病院 産婦人科" },
+        { year: "○○年", content: "レディースクリニック ぷかぷか 入職" },
+      ],
+    },
+  ]
+
+  const embryologists = [
+    {
+      name: "培養士 A",
+      role: "主任培養士",
+      image: "embryologist-a.jpg",
+      qualifications: ["臨床エンブリオロジスト", "胚培養士"],
+      message: "大切な卵子・精子・胚を最良の状態で管理し、皆様の治療をサポートいたします。",
+    },
+    {
+      name: "培養士 B",
+      role: "培養士",
+      image: "embryologist-b.jpg",
+      qualifications: ["臨床エンブリオロジスト"],
+      message: "培養室での作業一つひとつに細心の注意を払い、丁寧な培養を心がけています。",
+    },
+  ]
+
   return (
     <div className="flex flex-col">
       {/* Page Header */}
       <div className="bg-secondary/30 py-12">
         <div className="container text-center">
           <h1 className="text-3xl font-bold text-primary mb-4">医師紹介</h1>
-          <p className="text-muted-foreground">当院の医師をご紹介します</p>
+          <p className="text-muted-foreground">当院の医師・培養士をご紹介します</p>
+        </div>
+      </div>
+
+      {/* Anchor Navigation */}
+      <div className="bg-white border-b sticky top-20 z-30">
+        <div className="container py-4">
+          <div className="flex flex-wrap gap-2 md:gap-4 justify-center">
+            {[
+              { label: "医師紹介", href: "#doctors" },
+              { label: "培養士紹介", href: "#embryologists" },
+            ].map((item) => (
+              <a
+                key={item.href}
+                href={item.href}
+                className="px-4 py-2 text-sm rounded-full border border-primary/20 text-primary hover:bg-primary/5 transition-colors"
+              >
+                {item.label}
+              </a>
+            ))}
+          </div>
         </div>
       </div>
 
       {/*
         ============================================
-        【画像】院長写真
+        【画像】医師写真
         - 推奨サイズ: 400x500px
-        - ファイル名: doctor-director.jpg
-        - 内容: 院長の顔写真（白衣姿推奨）
+        - ファイル名: doctor-iwasaki.jpg, doctor-satake.jpg
+        - 内容: 医師の顔写真（白衣姿推奨）
         ============================================
       */}
-      {/* Director Section */}
-      <section className="py-16">
+      {/* Doctors Section */}
+      <section id="doctors" className="py-16 scroll-mt-32">
         <div className="container">
-          <div className="max-w-4xl mx-auto">
-            <div className="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden">
-              <div className="grid md:grid-cols-2">
-                <div className="bg-gray-200 aspect-[4/5] md:aspect-auto flex flex-col items-center justify-center border-2 border-dashed border-gray-300">
-                  <span className="text-muted-foreground font-medium">【画像】</span>
-                  <span className="text-muted-foreground text-sm">doctor-director.jpg</span>
-                  <span className="text-xs text-gray-400 mt-1">推奨: 400x500px</span>
-                </div>
-                <div className="p-8 md:p-10">
-                  <div className="mb-6">
-                    <span className="inline-block bg-primary text-white text-xs px-3 py-1 rounded-full mb-3">院長</span>
-                    <h2 className="text-2xl font-bold text-primary mb-1">叶谷 愛弓</h2>
-                    <p className="text-sm text-muted-foreground">かなたに あゆみ</p>
-                  </div>
+          <h2 className="text-2xl font-bold text-primary text-center mb-12">医師紹介</h2>
 
-                  <div className="flex flex-wrap gap-2 mb-6">
-                    <span className="text-xs bg-primary/10 text-primary px-3 py-1 rounded-full">日本産科婦人科学会専門医</span>
-                    <span className="text-xs bg-primary/10 text-primary px-3 py-1 rounded-full">医学博士</span>
+          <div className="space-y-12 max-w-4xl mx-auto">
+            {doctors.map((doctor, i) => (
+              <div key={i} className="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden">
+                <div className="grid md:grid-cols-2">
+                  <div className="bg-gray-200 aspect-[4/5] md:aspect-auto flex flex-col items-center justify-center border-2 border-dashed border-gray-300">
+                    <span className="text-muted-foreground font-medium">【画像】</span>
+                    <span className="text-muted-foreground text-sm">{doctor.image}</span>
+                    <span className="text-xs text-gray-400 mt-1">推奨: 400x500px</span>
                   </div>
+                  <div className="p-8 md:p-10">
+                    <div className="mb-6">
+                      <span className={`inline-block text-white text-xs px-3 py-1 rounded-full mb-3 ${doctor.role === "院長" ? "bg-primary" : "bg-purple-500"}`}>
+                        {doctor.role}
+                      </span>
+                      <h3 className="text-2xl font-bold text-primary mb-1">{doctor.name}</h3>
+                      <p className="text-sm text-muted-foreground">{doctor.nameKana}</p>
+                    </div>
 
-                  <div className="space-y-4 text-muted-foreground text-sm leading-relaxed">
-                    <p>
-                      レディースクリニック ぷかぷかのホームページをご覧いただき、ありがとうございます。
+                    <div className="flex flex-wrap gap-2 mb-6">
+                      {doctor.qualifications.map((qual, qi) => (
+                        <span key={qi} className="text-xs bg-primary/10 text-primary px-3 py-1 rounded-full">
+                          {qual}
+                        </span>
+                      ))}
+                    </div>
+
+                    <p className="text-muted-foreground text-sm leading-relaxed mb-6">
+                      {doctor.message}
                     </p>
-                    <p>
-                      私はこれまで、こども病院や総合周産期センター、大学病院などで、ハイリスク妊娠・分娩管理、不妊治療、がん治療を担当してまいりました。
-                    </p>
-                    <p>
-                      女性のからだは、女性ホルモンの影響を大きく受けながら、思春期から更年期まで様々な変化を経験します。そのような女性特有の「なみ」に寄り添い、皆様のかかりつけ医として、どんなことでもご相談いただける存在でありたいと考えています。
-                    </p>
+
+                    <div className="border-t pt-4">
+                      <h4 className="font-bold text-sm text-primary mb-3">経歴</h4>
+                      <div className="space-y-2 text-xs text-muted-foreground">
+                        {doctor.career.map((item, ci) => (
+                          <div key={ci} className="flex gap-3">
+                            <span className="font-medium w-12 shrink-0">{item.year}</span>
+                            <span>{item.content}</span>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
+            ))}
           </div>
         </div>
       </section>
 
-      {/* Career Section */}
-      <section className="py-16 bg-secondary/30">
+      {/*
+        ============================================
+        【画像】培養士写真
+        - 推奨サイズ: 300x300px
+        - ファイル名: embryologist-a.jpg, embryologist-b.jpg
+        - 内容: 培養士の顔写真
+        ============================================
+      */}
+      {/* Embryologists Section */}
+      <section id="embryologists" className="py-16 bg-secondary/30 scroll-mt-32">
         <div className="container">
-          <div className="max-w-3xl mx-auto">
-            <h2 className="text-xl font-bold text-primary text-center mb-8">経歴・資格</h2>
+          <h2 className="text-2xl font-bold text-primary text-center mb-4">培養士紹介</h2>
+          <p className="text-center text-muted-foreground mb-12">
+            高度な技術を持つ培養士が、大切な卵子・胚を管理しています
+          </p>
 
-            <div className="bg-white rounded-2xl p-8 shadow-sm">
-              <h3 className="font-bold text-primary mb-4">経歴</h3>
-              <div className="space-y-3 text-sm mb-8">
-                {[
-                  { year: "○○年", content: "○○大学医学部 卒業" },
-                  { year: "○○年", content: "○○大学病院 産婦人科 入局" },
-                  { year: "○○年", content: "○○こども病院 産婦人科" },
-                  { year: "○○年", content: "○○総合周産期センター" },
-                  { year: "○○年", content: "○○大学病院 産婦人科 助教" },
-                  { year: "2024年", content: "レディースクリニック ぷかぷか 開院" },
-                ].map((item, i) => (
-                  <div key={i} className="flex gap-4 text-muted-foreground">
-                    <span className="font-medium w-16 shrink-0">{item.year}</span>
-                    <span>{item.content}</span>
-                  </div>
-                ))}
+          <div className="grid md:grid-cols-2 gap-8 max-w-3xl mx-auto">
+            {embryologists.map((embryologist, i) => (
+              <div key={i} className="bg-white rounded-xl shadow-sm border border-gray-100 p-6 text-center">
+                <div className="w-32 h-32 mx-auto mb-4 rounded-full bg-gray-200 flex flex-col items-center justify-center border-2 border-dashed border-gray-300">
+                  <span className="text-muted-foreground text-xs">【画像】</span>
+                  <span className="text-muted-foreground text-[10px]">{embryologist.image}</span>
+                </div>
+                <span className="inline-block bg-blue-100 text-blue-700 text-xs px-3 py-1 rounded-full mb-2">
+                  {embryologist.role}
+                </span>
+                <h3 className="text-lg font-bold text-primary mb-2">{embryologist.name}</h3>
+                <div className="flex flex-wrap justify-center gap-1 mb-4">
+                  {embryologist.qualifications.map((qual, qi) => (
+                    <span key={qi} className="text-[10px] bg-gray-100 text-gray-600 px-2 py-0.5 rounded">
+                      {qual}
+                    </span>
+                  ))}
+                </div>
+                <p className="text-sm text-muted-foreground leading-relaxed">
+                  {embryologist.message}
+                </p>
               </div>
-
-              <h3 className="font-bold text-primary mb-4">資格・所属学会</h3>
-              <ul className="space-y-2 text-sm text-muted-foreground">
-                <li>・日本産科婦人科学会 専門医</li>
-                <li>・医学博士</li>
-                <li>・日本産科婦人科学会</li>
-                <li>・日本生殖医学会</li>
-                <li>・日本女性医学学会</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Message Section */}
-      <section className="py-16">
-        <div className="container">
-          <div className="max-w-3xl mx-auto text-center">
-            <h2 className="text-xl font-bold text-primary mb-8">患者様へのメッセージ</h2>
-
-            <div className="bg-gradient-to-r from-primary/5 to-secondary/20 p-8 rounded-2xl">
-              <p className="text-lg leading-relaxed text-muted-foreground mb-6">
-                「女性のなみを理解して」
-              </p>
-              <p className="text-muted-foreground leading-relaxed mb-6">
-                女性のからだは、月経のリズム、妊娠・出産、更年期など、一生を通じて様々な「なみ」を経験します。<br />
-                時にその波は穏やかに、時に激しく。
-              </p>
-              <p className="text-muted-foreground leading-relaxed mb-6">
-                当院は、そんな女性特有の波に寄り添い、皆様が安心して相談できる場所でありたいと考えています。<br />
-                小さな不安も、気軽にお話しください。一緒に解決策を見つけていきましょう。
-              </p>
-              <p className="text-primary font-bold">
-                スタッフ一同、皆様のご来院をお待ちしております。
-              </p>
-            </div>
+            ))}
           </div>
         </div>
       </section>
