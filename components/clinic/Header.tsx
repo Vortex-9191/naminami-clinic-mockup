@@ -17,53 +17,37 @@ export function Header() {
       href: "/treatment",
       submenu: [
         {
-          label: "産科",
-          href: "/treatment/obstetrics",
+          label: "一般産婦人科",
+          href: "/treatment/general",
           items: [
-            { name: "妊婦健診", href: "/treatment/obstetrics/prenatal" },
-            { name: "NIPT", href: "/treatment/obstetrics/nipt" },
-            { name: "出生前診断", href: "/treatment/obstetrics/prenatal-diagnosis" },
-            { name: "つわり外来", href: "/treatment/obstetrics/morning-sickness" },
-            { name: "妊娠相談", href: "/treatment/obstetrics/pregnancy-consultation" },
+            { name: "月経関連トラブル", href: "/treatment/general/menstrual" },
+            { name: "避妊治療", href: "/treatment/general/contraception" },
+            { name: "頸がん検診", href: "/treatment/general/cervical-cancer" },
+            { name: "妊娠判定・採卵", href: "/treatment/general/pregnancy-test" },
           ]
         },
         {
-          label: "婦人科",
-          href: "/treatment/gynecology",
+          label: "高度不妊治療",
+          href: "/treatment/advanced-fertility",
           items: [
-            { name: "月経トラブル", href: "/treatment/gynecology/menstrual" },
-            { name: "低用量ピル", href: "/treatment/gynecology/pill" },
-            { name: "アフターピル", href: "/treatment/gynecology/emergency-pill" },
-            { name: "更年期症候群", href: "/treatment/gynecology/menopause" },
-            { name: "不妊症相談", href: "/treatment/gynecology/infertility" },
-            { name: "性感染症検査", href: "/treatment/gynecology/std" },
+            { name: "卵子凍結", href: "/treatment/advanced-fertility/egg-freezing" },
+            { name: "精子凍結", href: "/treatment/advanced-fertility/sperm-freezing" },
+            { name: "培養", href: "/treatment/advanced-fertility/culture" },
+            { name: "胚凍結", href: "/treatment/advanced-fertility/embryo-freezing" },
+            { name: "胚移植", href: "/treatment/advanced-fertility/embryo-transfer" },
+            { name: "体外受精", href: "/treatment/advanced-fertility/ivf" },
+            { name: "顕微授精", href: "/treatment/advanced-fertility/icsi" },
+            { name: "着床前診断", href: "/treatment/advanced-fertility/pgt" },
+            { name: "先進医療について", href: "/treatment/advanced-fertility/advanced-medicine" },
           ]
         },
         {
-          label: "女性泌尿器科",
-          href: "/treatment/urology",
+          label: "一般不妊治療",
+          href: "/treatment/fertility",
           items: [
-            { name: "膀胱炎", href: "/treatment/urology/cystitis" },
-            { name: "尿失禁", href: "/treatment/urology/incontinence" },
-            { name: "インティマレーザー", href: "/treatment/urology/intima-laser" },
-          ]
-        },
-        {
-          label: "内科",
-          href: "/treatment/internal",
-          items: [
-            { name: "片頭痛", href: "/treatment/internal/migraine" },
-            { name: "生活習慣病", href: "/treatment/internal/lifestyle" },
-            { name: "糖尿病", href: "/treatment/internal/diabetes" },
-          ]
-        },
-        {
-          label: "健康診断・相談",
-          href: "/treatment/checkup",
-          items: [
-            { name: "子宮がん検診", href: "/treatment/checkup/cervical" },
-            { name: "HPVワクチン", href: "/treatment/checkup/hpv" },
-            { name: "プレコンセプションチェック", href: "/treatment/checkup/preconception" },
+            { name: "タイミング療法", href: "/treatment/fertility/timing" },
+            { name: "人工授精", href: "/treatment/fertility/iui" },
+            { name: "原因不明不妊症", href: "/treatment/fertility/unexplained" },
           ]
         },
       ]
@@ -97,7 +81,7 @@ export function Header() {
               </Link>
               {item.submenu && openSubmenu === item.label && (
                 <div
-                  className="absolute top-full left-0 bg-white shadow-lg rounded-lg border p-4 min-w-[600px] grid grid-cols-5 gap-4"
+                  className="absolute top-full left-0 bg-white shadow-lg rounded-lg border p-4 min-w-[500px] grid grid-cols-3 gap-4"
                   onMouseEnter={() => setOpenSubmenu(item.label)}
                   onMouseLeave={() => setOpenSubmenu(null)}
                 >

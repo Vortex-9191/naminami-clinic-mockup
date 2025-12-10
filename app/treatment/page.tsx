@@ -3,83 +3,53 @@ import Link from "next/link"
 export default function TreatmentPage() {
   const departments = [
     {
-      id: "obstetrics",
-      name: "産科",
-      icon: "icon-obstetrics.svg",
+      id: "general",
+      name: "一般産婦人科",
+      icon: "icon-general.svg",
       color: "bg-pink-50",
       items: [
-        { name: "妊婦健診", href: "/treatment/obstetrics/prenatal" },
-        { name: "NIPT（新型出生前診断）", href: "/treatment/obstetrics/nipt" },
-        { name: "出生前診断", href: "/treatment/obstetrics/prenatal-diagnosis" },
-        { name: "つわり外来", href: "/treatment/obstetrics/morning-sickness" },
-        { name: "妊娠相談", href: "/treatment/obstetrics/pregnancy-consultation" },
+        { name: "月経関連トラブル", href: "/treatment/general/menstrual" },
+        { name: "避妊治療", href: "/treatment/general/contraception" },
+        { name: "頸がん検診", href: "/treatment/general/cervical-cancer" },
+        { name: "妊娠判定・採卵", href: "/treatment/general/pregnancy-test" },
       ],
     },
     {
-      id: "gynecology",
-      name: "婦人科",
-      icon: "icon-gynecology.svg",
+      id: "advanced-fertility",
+      name: "高度不妊治療",
+      icon: "icon-advanced-fertility.svg",
       color: "bg-purple-50",
       items: [
-        { name: "月経トラブル", href: "/treatment/gynecology/menstrual" },
-        { name: "低用量ピル", href: "/treatment/gynecology/pill" },
-        { name: "アフターピル", href: "/treatment/gynecology/emergency-pill" },
-        { name: "月経移動", href: "/treatment/gynecology/period-delay" },
-        { name: "PMS・PMDD", href: "/treatment/gynecology/pms" },
-        { name: "更年期症候群", href: "/treatment/gynecology/menopause" },
-        { name: "不妊症相談", href: "/treatment/gynecology/infertility" },
-        { name: "ブライダルチェック", href: "/treatment/gynecology/bridal" },
-        { name: "性感染症検査", href: "/treatment/gynecology/std" },
-        { name: "子宮頸がん検診", href: "/treatment/gynecology/cervical-cancer" },
-        { name: "おりもの・かゆみ", href: "/treatment/gynecology/discharge" },
-        { name: "性交痛", href: "/treatment/gynecology/dyspareunia" },
+        { name: "卵子凍結", href: "/treatment/advanced-fertility/egg-freezing" },
+        { name: "精子凍結", href: "/treatment/advanced-fertility/sperm-freezing" },
+        { name: "培養", href: "/treatment/advanced-fertility/culture" },
+        { name: "胚凍結", href: "/treatment/advanced-fertility/embryo-freezing" },
+        { name: "胚移植", href: "/treatment/advanced-fertility/embryo-transfer" },
+        { name: "体外受精", href: "/treatment/advanced-fertility/ivf" },
+        { name: "顕微授精", href: "/treatment/advanced-fertility/icsi" },
+        { name: "着床前診断", href: "/treatment/advanced-fertility/pgt" },
+        { name: "先進医療について", href: "/treatment/advanced-fertility/advanced-medicine" },
       ],
     },
     {
-      id: "urology",
-      name: "女性泌尿器科",
-      icon: "icon-urology.svg",
+      id: "fertility",
+      name: "一般不妊治療",
+      icon: "icon-fertility.svg",
       color: "bg-blue-50",
       items: [
-        { name: "膀胱炎", href: "/treatment/urology/cystitis" },
-        { name: "尿失禁", href: "/treatment/urology/incontinence" },
-        { name: "過活動膀胱", href: "/treatment/urology/overactive-bladder" },
-        { name: "インティマレーザー", href: "/treatment/urology/intima-laser" },
-      ],
-    },
-    {
-      id: "internal",
-      name: "内科",
-      icon: "icon-internal.svg",
-      color: "bg-green-50",
-      items: [
-        { name: "片頭痛", href: "/treatment/internal/migraine" },
-        { name: "生活習慣病", href: "/treatment/internal/lifestyle" },
-        { name: "糖尿病", href: "/treatment/internal/diabetes" },
-        { name: "風邪・発熱", href: "/treatment/internal/cold" },
-      ],
-    },
-    {
-      id: "checkup",
-      name: "健康診断・相談",
-      icon: "icon-checkup.svg",
-      color: "bg-orange-50",
-      items: [
-        { name: "子宮がん検診", href: "/treatment/checkup/cervical" },
-        { name: "HPVワクチン", href: "/treatment/checkup/hpv" },
-        { name: "インフルエンザワクチン", href: "/treatment/checkup/flu" },
-        { name: "プレコンセプションチェック", href: "/treatment/checkup/preconception" },
-        { name: "各種健康診断", href: "/treatment/checkup/general" },
+        { name: "タイミング療法", href: "/treatment/fertility/timing" },
+        { name: "人工授精", href: "/treatment/fertility/iui" },
+        { name: "原因不明不妊症", href: "/treatment/fertility/unexplained" },
       ],
     },
   ]
 
   const popularTreatments = [
-    { name: "低用量ピル処方", desc: "PMSや月経痛の改善、避妊目的など", href: "/treatment/gynecology/pill" },
-    { name: "子宮頸がん検診", desc: "定期的な検診で早期発見・早期治療", href: "/treatment/checkup/cervical" },
-    { name: "性感染症検査", desc: "匿名での検査も可能です", href: "/treatment/gynecology/std" },
-    { name: "更年期症候群", desc: "ホルモン補充療法など", href: "/treatment/gynecology/menopause" },
-    { name: "妊婦健診", desc: "妊娠中の定期検診", href: "/treatment/obstetrics/prenatal" },
+    { name: "体外受精", desc: "高度不妊治療の中心的な治療法", href: "/treatment/advanced-fertility/ivf" },
+    { name: "顕微授精", desc: "精子を直接卵子に注入する高度な治療", href: "/treatment/advanced-fertility/icsi" },
+    { name: "人工授精", desc: "タイミング法の次のステップ", href: "/treatment/fertility/iui" },
+    { name: "卵子凍結", desc: "将来の妊娠に備えて", href: "/treatment/advanced-fertility/egg-freezing" },
+    { name: "着床前診断", desc: "染色体異常の検査", href: "/treatment/advanced-fertility/pgt" },
     { name: "オンライン診療", desc: "ご自宅から受診可能", href: "/online" },
   ]
 
@@ -116,9 +86,9 @@ export default function TreatmentPage() {
 
       {/*
         ============================================
-        【イラスト】診療科目アイコン（5個）
+        【イラスト】診療科目アイコン（3個）
         - 推奨サイズ: 80x80px / SVG
-        - ファイル名: icon-obstetrics.svg, icon-gynecology.svg, icon-urology.svg, icon-internal.svg, icon-checkup.svg
+        - ファイル名: icon-general.svg, icon-advanced-fertility.svg, icon-fertility.svg
         - 内容: 各診療科目を表す独自イラスト
         ============================================
       */}

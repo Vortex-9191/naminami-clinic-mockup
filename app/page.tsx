@@ -185,22 +185,20 @@ export default function Home() {
 
       {/*
         ============================================
-        【イラスト】診療科目アイコン（5種類）
+        【イラスト】診療科目アイコン（3種類）
         - 推奨サイズ: 120x120px（または SVG）
         - 形式: PNG/SVG（透過推奨）
         - ファイル名:
-          - icon-obstetrics.svg（産科）
-          - icon-gynecology.svg（婦人科）
-          - icon-urology.svg（女性泌尿器科）
-          - icon-internal.svg（内科）
-          - icon-checkup.svg（健康診断・相談）
+          - icon-general.svg（一般産婦人科）
+          - icon-advanced-fertility.svg（高度不妊治療）
+          - icon-fertility.svg（一般不妊治療）
         - 内容: 各診療科目を表す独自イラスト
 
         【イラスト】診療内容サムネイル（各項目）
         - 推奨サイズ: 200x150px
-        - 形式: JPG/PNG/イラスト
-        - ファイル名: menu-{項目名}.jpg
-        - 内容: 各診療内容を表す写真またはイラスト
+        - 形式: WebP/PNG/イラスト
+        - ファイル名: menu-{項目名}.webp
+        - 内容: 各診療内容を表すイラスト
         ============================================
       */}
       {/* Medical Menu Section */}
@@ -209,7 +207,7 @@ export default function Home() {
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold text-primary mb-4">診療メニュー</h2>
             <p className="text-muted-foreground">
-              女性のライフステージに合わせた幅広い診療を行っています
+              不妊治療から一般産婦人科まで、幅広い診療を行っています
             </p>
           </div>
 
@@ -219,13 +217,11 @@ export default function Home() {
               <span className="w-1 h-6 bg-primary rounded-full"></span>
               診療科目から探す
             </h3>
-            <div className="grid grid-cols-2 md:grid-cols-5 gap-4 md:gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6">
               {[
-                { title: "産科", desc: "妊婦健診・NIPT・出生前診断", href: "/treatment/obstetrics", color: "bg-pink-50", iconFile: "icon-obstetrics.svg" },
-                { title: "婦人科", desc: "月経トラブル・ピル・更年期", href: "/treatment/gynecology", color: "bg-purple-50", iconFile: "icon-gynecology.svg" },
-                { title: "女性泌尿器科", desc: "膀胱炎・尿失禁・レーザー治療", href: "/treatment/urology", color: "bg-blue-50", iconFile: "icon-urology.svg" },
-                { title: "内科", desc: "片頭痛・生活習慣病・糖尿病", href: "/treatment/internal", color: "bg-green-50", iconFile: "icon-internal.svg" },
-                { title: "健康診断・相談", desc: "がん検診・ワクチン・ドック", href: "/treatment/checkup", color: "bg-orange-50", iconFile: "icon-checkup.svg" },
+                { title: "一般産婦人科", desc: "月経関連トラブル・避妊治療・頸がん検診", href: "/treatment/general", color: "bg-pink-50", iconFile: "icon-general.svg" },
+                { title: "高度不妊治療", desc: "体外受精・顕微授精・着床前診断", href: "/treatment/advanced-fertility", color: "bg-purple-50", iconFile: "icon-advanced-fertility.svg" },
+                { title: "一般不妊治療", desc: "タイミング療法・人工授精", href: "/treatment/fertility", color: "bg-blue-50", iconFile: "icon-fertility.svg" },
               ].map((dept, i) => (
                 <Link key={i} href={dept.href} className="block">
                   <div className="bg-white p-6 rounded-xl shadow-sm border border-gray-100 hover:shadow-md transition-all hover:-translate-y-1 text-center h-full">
@@ -261,66 +257,43 @@ export default function Home() {
             <div className="space-y-6">
               {[
                 {
-                  category: "産科",
+                  category: "一般産婦人科",
                   color: "bg-pink-50",
                   borderColor: "border-pink-200",
                   tagColor: "bg-pink-100 text-pink-700",
                   items: [
-                    { name: "妊婦健診", file: "menu-prenatal.webp", href: "/treatment/obstetrics/prenatal" },
-                    { name: "NIPT", file: "menu-nipt.webp", href: "/treatment/obstetrics/nipt" },
-                    { name: "つわり外来", file: "menu-morning-sickness.webp", href: "/treatment/obstetrics/morning-sickness" },
-                    { name: "妊娠相談", file: "menu-pregnancy.webp", href: "/treatment/obstetrics/pregnancy-consultation" },
+                    { name: "月経関連トラブル", file: "menu-menstrual.webp", href: "/treatment/general/menstrual" },
+                    { name: "避妊治療", file: "menu-contraception.webp", href: "/treatment/general/contraception" },
+                    { name: "頸がん検診", file: "menu-cervical-cancer.webp", href: "/treatment/general/cervical-cancer" },
+                    { name: "妊娠判定・採卵", file: "menu-pregnancy-test.webp", href: "/treatment/general/pregnancy-test" },
                   ]
                 },
                 {
-                  category: "婦人科",
+                  category: "高度不妊治療",
                   color: "bg-purple-50",
                   borderColor: "border-purple-200",
                   tagColor: "bg-purple-100 text-purple-700",
                   items: [
-                    { name: "低用量ピル", file: "menu-pill.webp", href: "/treatment/gynecology/pill" },
-                    { name: "アフターピル", file: "menu-emergency-pill.webp", href: "/treatment/gynecology/emergency-pill" },
-                    { name: "月経移動", file: "menu-period-delay.webp", href: "/treatment/gynecology/period-delay" },
-                    { name: "月経トラブル", file: "menu-menstrual.webp", href: "/treatment/gynecology/menstrual" },
-                    { name: "PMS・PMDD", file: "menu-pms.webp", href: "/treatment/gynecology/pms" },
-                    { name: "更年期症候群", file: "menu-menopause.webp", href: "/treatment/gynecology/menopause" },
-                    { name: "不妊症相談", file: "menu-infertility.webp", href: "/treatment/gynecology/infertility" },
-                    { name: "ブライダルチェック", file: "menu-bridal.webp", href: "/treatment/gynecology/bridal" },
-                    { name: "性感染症検査", file: "menu-std.webp", href: "/treatment/gynecology/std" },
-                    { name: "おりもの・かゆみ", file: "menu-discharge.webp", href: "/treatment/gynecology/discharge" },
+                    { name: "卵子凍結", file: "menu-egg-freezing.webp", href: "/treatment/advanced-fertility/egg-freezing" },
+                    { name: "精子凍結", file: "menu-sperm-freezing.webp", href: "/treatment/advanced-fertility/sperm-freezing" },
+                    { name: "培養", file: "menu-culture.webp", href: "/treatment/advanced-fertility/culture" },
+                    { name: "胚凍結", file: "menu-embryo-freezing.webp", href: "/treatment/advanced-fertility/embryo-freezing" },
+                    { name: "胚移植", file: "menu-embryo-transfer.webp", href: "/treatment/advanced-fertility/embryo-transfer" },
+                    { name: "体外受精", file: "menu-ivf.webp", href: "/treatment/advanced-fertility/ivf" },
+                    { name: "顕微授精", file: "menu-icsi.webp", href: "/treatment/advanced-fertility/icsi" },
+                    { name: "着床前診断", file: "menu-pgt.webp", href: "/treatment/advanced-fertility/pgt" },
+                    { name: "先進医療について", file: "menu-advanced-medicine.webp", href: "/treatment/advanced-fertility/advanced-medicine" },
                   ]
                 },
                 {
-                  category: "女性泌尿器科",
+                  category: "一般不妊治療",
                   color: "bg-blue-50",
                   borderColor: "border-blue-200",
                   tagColor: "bg-blue-100 text-blue-700",
                   items: [
-                    { name: "膀胱炎", file: "menu-cystitis.webp", href: "/treatment/urology/cystitis" },
-                    { name: "尿失禁", file: "menu-incontinence.webp", href: "/treatment/urology/incontinence" },
-                    { name: "インティマレーザー", file: "menu-intima-laser.webp", href: "/treatment/urology/intima-laser" },
-                  ]
-                },
-                {
-                  category: "内科",
-                  color: "bg-green-50",
-                  borderColor: "border-green-200",
-                  tagColor: "bg-green-100 text-green-700",
-                  items: [
-                    { name: "片頭痛", file: "menu-migraine.webp", href: "/treatment/internal/migraine" },
-                    { name: "生活習慣病", file: "menu-lifestyle.webp", href: "/treatment/internal/lifestyle" },
-                    { name: "糖尿病", file: "menu-diabetes.webp", href: "/treatment/internal/diabetes" },
-                  ]
-                },
-                {
-                  category: "健康診断・相談",
-                  color: "bg-orange-50",
-                  borderColor: "border-orange-200",
-                  tagColor: "bg-orange-100 text-orange-700",
-                  items: [
-                    { name: "子宮頸がん検診", file: "menu-cervical.webp", href: "/treatment/checkup/cervical" },
-                    { name: "HPVワクチン", file: "menu-hpv.webp", href: "/treatment/checkup/hpv" },
-                    { name: "プレコンセプションチェック", file: "menu-preconception.webp", href: "/treatment/checkup/preconception" },
+                    { name: "タイミング療法", file: "menu-timing.webp", href: "/treatment/fertility/timing" },
+                    { name: "人工授精", file: "menu-iui.webp", href: "/treatment/fertility/iui" },
+                    { name: "原因不明不妊症", file: "menu-unexplained.webp", href: "/treatment/fertility/unexplained" },
                   ]
                 },
               ].map((group, gi) => (
