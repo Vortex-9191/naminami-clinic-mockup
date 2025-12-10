@@ -176,7 +176,7 @@ export default function Home() {
                 女性のあらゆる健康上のお悩みにワンストップで対応できる体制を整えています。
               </p>
               <Button variant="outline" className="rounded-full border-primary text-primary" asChild>
-                <Link href="/about">当院についてもっと見る</Link>
+                <Link href="/feature">当院についてもっと見る</Link>
               </Button>
             </div>
           </div>

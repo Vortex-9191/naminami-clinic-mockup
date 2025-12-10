@@ -10,7 +10,7 @@ export function Header() {
   const [openSubmenu, setOpenSubmenu] = useState<string | null>(null)
 
   const navItems = [
-    { label: "当院の特徴", href: "/about" },
+    { label: "当院の特徴", href: "/feature" },
     { label: "はじめての方へ", href: "/visitor" },
     {
       label: "診療内容",
