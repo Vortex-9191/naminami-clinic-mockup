@@ -247,40 +247,94 @@ export default function Home() {
               <span className="w-1 h-6 bg-primary rounded-full"></span>
               診療内容から探す
             </h3>
-            <div className="grid grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-3 md:gap-4">
+
+            {/* 診療科目ごとにグループ化 */}
+            <div className="space-y-6">
               {[
-                { name: "妊婦健診", file: "menu-prenatal.jpg", href: "/treatment/obstetrics/prenatal" },
-                { name: "NIPT", file: "menu-nipt.jpg", href: "/treatment/obstetrics/nipt" },
-                { name: "つわり外来", file: "menu-morning-sickness.jpg", href: "/treatment/obstetrics/morning-sickness" },
-                { name: "低用量ピル", file: "menu-pill.jpg", href: "/treatment/gynecology/pill" },
-                { name: "アフターピル", file: "menu-emergency-pill.jpg", href: "/treatment/gynecology/emergency-pill" },
-                { name: "月経移動", file: "menu-period-delay.jpg", href: "/treatment/gynecology/period-delay" },
-                { name: "月経トラブル", file: "menu-menstrual.jpg", href: "/treatment/gynecology/menstrual" },
-                { name: "PMS・PMDD", file: "menu-pms.jpg", href: "/treatment/gynecology/pms" },
-                { name: "更年期症候群", file: "menu-menopause.jpg", href: "/treatment/gynecology/menopause" },
-                { name: "不妊症相談", file: "menu-infertility.jpg", href: "/treatment/gynecology/infertility" },
-                { name: "ブライダルチェック", file: "menu-bridal.jpg", href: "/treatment/gynecology/bridal" },
-                { name: "性感染症検査", file: "menu-std.jpg", href: "/treatment/gynecology/std" },
-                { name: "子宮頸がん検診", file: "menu-cervical.jpg", href: "/treatment/checkup/cervical" },
-                { name: "おりもの・かゆみ", file: "menu-discharge.jpg", href: "/treatment/gynecology/discharge" },
-                { name: "膀胱炎", file: "menu-cystitis.jpg", href: "/treatment/urology/cystitis" },
-                { name: "尿失禁", file: "menu-incontinence.jpg", href: "/treatment/urology/incontinence" },
-                { name: "インティマレーザー", file: "menu-intima-laser.jpg", href: "/treatment/urology/intima-laser" },
-                { name: "HPVワクチン", file: "menu-hpv.jpg", href: "/treatment/checkup/hpv" },
-                { name: "片頭痛", file: "menu-migraine.jpg", href: "/treatment/internal/migraine" },
-                { name: "オンライン診療", file: "menu-online.jpg", href: "/online" },
-              ].map((item, i) => (
-                <Link key={i} href={item.href} className="block group">
-                  <div className="bg-white rounded-lg overflow-hidden shadow-sm border border-gray-100 hover:shadow-md transition-all">
-                    <div className="bg-gray-200 aspect-[4/3] flex flex-col items-center justify-center border-b-2 border-dashed border-gray-300">
-                      <span className="text-[9px] text-gray-500">【画像】</span>
-                      <span className="text-[7px] text-gray-400 text-center px-1">{item.file}</span>
-                    </div>
-                    <div className="p-2">
-                      <p className="text-xs font-medium text-center group-hover:text-primary transition-colors">{item.name}</p>
-                    </div>
+                {
+                  category: "産科",
+                  color: "bg-pink-50",
+                  borderColor: "border-pink-200",
+                  tagColor: "bg-pink-100 text-pink-700",
+                  items: [
+                    { name: "妊婦健診", file: "menu-prenatal.jpg", href: "/treatment/obstetrics/prenatal" },
+                    { name: "NIPT", file: "menu-nipt.jpg", href: "/treatment/obstetrics/nipt" },
+                    { name: "つわり外来", file: "menu-morning-sickness.jpg", href: "/treatment/obstetrics/morning-sickness" },
+                    { name: "妊娠相談", file: "menu-pregnancy.jpg", href: "/treatment/obstetrics/pregnancy-consultation" },
+                  ]
+                },
+                {
+                  category: "婦人科",
+                  color: "bg-purple-50",
+                  borderColor: "border-purple-200",
+                  tagColor: "bg-purple-100 text-purple-700",
+                  items: [
+                    { name: "低用量ピル", file: "menu-pill.jpg", href: "/treatment/gynecology/pill" },
+                    { name: "アフターピル", file: "menu-emergency-pill.jpg", href: "/treatment/gynecology/emergency-pill" },
+                    { name: "月経移動", file: "menu-period-delay.jpg", href: "/treatment/gynecology/period-delay" },
+                    { name: "月経トラブル", file: "menu-menstrual.jpg", href: "/treatment/gynecology/menstrual" },
+                    { name: "PMS・PMDD", file: "menu-pms.jpg", href: "/treatment/gynecology/pms" },
+                    { name: "更年期症候群", file: "menu-menopause.jpg", href: "/treatment/gynecology/menopause" },
+                    { name: "不妊症相談", file: "menu-infertility.jpg", href: "/treatment/gynecology/infertility" },
+                    { name: "ブライダルチェック", file: "menu-bridal.jpg", href: "/treatment/gynecology/bridal" },
+                    { name: "性感染症検査", file: "menu-std.jpg", href: "/treatment/gynecology/std" },
+                    { name: "おりもの・かゆみ", file: "menu-discharge.jpg", href: "/treatment/gynecology/discharge" },
+                  ]
+                },
+                {
+                  category: "女性泌尿器科",
+                  color: "bg-blue-50",
+                  borderColor: "border-blue-200",
+                  tagColor: "bg-blue-100 text-blue-700",
+                  items: [
+                    { name: "膀胱炎", file: "menu-cystitis.jpg", href: "/treatment/urology/cystitis" },
+                    { name: "尿失禁", file: "menu-incontinence.jpg", href: "/treatment/urology/incontinence" },
+                    { name: "インティマレーザー", file: "menu-intima-laser.jpg", href: "/treatment/urology/intima-laser" },
+                  ]
+                },
+                {
+                  category: "内科",
+                  color: "bg-green-50",
+                  borderColor: "border-green-200",
+                  tagColor: "bg-green-100 text-green-700",
+                  items: [
+                    { name: "片頭痛", file: "menu-migraine.jpg", href: "/treatment/internal/migraine" },
+                    { name: "生活習慣病", file: "menu-lifestyle.jpg", href: "/treatment/internal/lifestyle" },
+                    { name: "糖尿病", file: "menu-diabetes.jpg", href: "/treatment/internal/diabetes" },
+                  ]
+                },
+                {
+                  category: "健康診断・相談",
+                  color: "bg-orange-50",
+                  borderColor: "border-orange-200",
+                  tagColor: "bg-orange-100 text-orange-700",
+                  items: [
+                    { name: "子宮頸がん検診", file: "menu-cervical.jpg", href: "/treatment/checkup/cervical" },
+                    { name: "HPVワクチン", file: "menu-hpv.jpg", href: "/treatment/checkup/hpv" },
+                    { name: "プレコンセプションチェック", file: "menu-preconception.jpg", href: "/treatment/checkup/preconception" },
+                  ]
+                },
+              ].map((group, gi) => (
+                <div key={gi} className={`${group.color} rounded-xl p-4 border ${group.borderColor}`}>
+                  <span className={`inline-block ${group.tagColor} text-xs font-bold px-3 py-1 rounded-full mb-3`}>
+                    {group.category}
+                  </span>
+                  <div className="grid grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-3">
+                    {group.items.map((item, i) => (
+                      <Link key={i} href={item.href} className="block group">
+                        <div className="bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-all">
+                          <div className="bg-gray-200 aspect-[4/3] flex flex-col items-center justify-center border-b-2 border-dashed border-gray-300">
+                            <span className="text-[9px] text-gray-500">【画像】</span>
+                            <span className="text-[7px] text-gray-400 text-center px-1">{item.file}</span>
+                          </div>
+                          <div className="p-2">
+                            <p className="text-xs font-medium text-center group-hover:text-primary transition-colors">{item.name}</p>
+                          </div>
+                        </div>
+                      </Link>
+                    ))}
                   </div>
-                </Link>
+                </div>
               ))}
             </div>
           </div>
