@@ -126,10 +126,11 @@ export default function VisitorPage() {
 
       {/*
         ============================================
-        【画像】診療時間表
+        【イラスト】診療時間表
         - 推奨サイズ: 800x400px
-        - ファイル名: time.png
-        - 内容: 診療時間の表画像
+        - 形式: SVG/PNG
+        - ファイル名: time.svg
+        - 内容: 診療時間の表イラスト
         ============================================
       */}
       {/* Hours Section */}
@@ -140,8 +141,8 @@ export default function VisitorPage() {
           <div className="max-w-2xl mx-auto">
             <div className="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 mb-8">
               <div className="bg-gray-200 rounded-xl h-[200px] flex flex-col items-center justify-center border-2 border-dashed border-gray-300 mb-6">
-                <span className="text-muted-foreground font-medium">【画像】</span>
-                <span className="text-muted-foreground text-sm">time.png（診療時間表）</span>
+                <span className="text-muted-foreground font-medium">【イラスト】</span>
+                <span className="text-muted-foreground text-sm">time.svg（診療時間表）</span>
               </div>
 
               <table className="w-full text-center text-sm mb-4">

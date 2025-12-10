@@ -34,10 +34,11 @@ export default function AccessPage() {
 
       {/*
         ============================================
-        【画像】診療時間表
+        【イラスト】診療時間表
         - 推奨サイズ: 800x400px（PC用）、400x600px（SP用）
-        - ファイル名: time.png, time-sp.png
-        - 内容: 診療時間の表画像
+        - 形式: SVG/PNG
+        - ファイル名: time.svg, time-sp.svg
+        - 内容: 診療時間の表イラスト
         ============================================
       */}
       {/* Hours Section */}
@@ -51,16 +52,16 @@ export default function AccessPage() {
               {/* Desktop version */}
               <div className="hidden md:block">
                 <div className="bg-gray-200 rounded-xl h-[200px] flex flex-col items-center justify-center border-2 border-dashed border-gray-300 mb-6">
-                  <span className="text-muted-foreground font-medium">【画像】</span>
-                  <span className="text-muted-foreground text-sm">time.png（PC用診療時間表）</span>
+                  <span className="text-muted-foreground font-medium">【イラスト】</span>
+                  <span className="text-muted-foreground text-sm">time.svg（PC用診療時間表）</span>
                   <span className="text-xs text-gray-400 mt-1">推奨: 800x400px</span>
                 </div>
               </div>
               {/* Mobile version */}
               <div className="md:hidden">
                 <div className="bg-gray-200 rounded-xl h-[300px] flex flex-col items-center justify-center border-2 border-dashed border-gray-300 mb-6">
-                  <span className="text-muted-foreground font-medium">【画像】</span>
-                  <span className="text-muted-foreground text-sm">time-sp.png（SP用診療時間表）</span>
+                  <span className="text-muted-foreground font-medium">【イラスト】</span>
+                  <span className="text-muted-foreground text-sm">time-sp.svg（SP用診療時間表）</span>
                   <span className="text-xs text-gray-400 mt-1">推奨: 400x600px</span>
                 </div>
               </div>

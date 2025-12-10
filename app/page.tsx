@@ -39,9 +39,10 @@ export default function Home() {
 
       {/*
         ============================================
-        【画像】診療時間表
+        【イラスト】診療時間表
         - 推奨サイズ: 800x300px（PC用）、400x400px（SP用）
-        - ファイル名: time.png, time-sp.png
+        - 形式: SVG/PNG
+        - ファイル名: time.svg, time-sp.svg
         - 内容: 診療時間の曜日・時間帯を表形式で表示
         ============================================
       */}
@@ -49,7 +50,7 @@ export default function Home() {
       <section className="py-8 bg-white border-b">
         <div className="container">
           <div className="grid md:grid-cols-2 gap-8 items-start">
-            {/* 診療時間画像 */}
+            {/* 診療時間イラスト */}
             <div>
               <h2 className="text-lg font-bold text-primary mb-4 flex items-center gap-2">
                 <Clock className="w-5 h-5" />
@@ -58,16 +59,16 @@ export default function Home() {
               {/* PC版 */}
               <div className="hidden md:block">
                 <div className="bg-gray-200 rounded-xl h-[150px] flex flex-col items-center justify-center border-2 border-dashed border-gray-300">
-                  <span className="text-muted-foreground font-medium">【画像】</span>
-                  <span className="text-muted-foreground text-sm">time.png（診療時間表）</span>
+                  <span className="text-muted-foreground font-medium">【イラスト】</span>
+                  <span className="text-muted-foreground text-sm">time.svg（診療時間表）</span>
                   <span className="text-xs text-gray-400 mt-1">推奨: 800x300px</span>
                 </div>
               </div>
               {/* SP版 */}
               <div className="md:hidden">
                 <div className="bg-gray-200 rounded-xl h-[200px] flex flex-col items-center justify-center border-2 border-dashed border-gray-300">
-                  <span className="text-muted-foreground font-medium">【画像】</span>
-                  <span className="text-muted-foreground text-sm">time-sp.png（診療時間表）</span>
+                  <span className="text-muted-foreground font-medium">【イラスト】</span>
+                  <span className="text-muted-foreground text-sm">time-sp.svg（診療時間表）</span>
                   <span className="text-xs text-gray-400 mt-1">推奨: 400x400px</span>
                 </div>
               </div>
