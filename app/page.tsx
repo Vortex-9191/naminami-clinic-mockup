@@ -298,6 +298,26 @@ export default function Home() {
                     { name: "原因不明不妊症", file: "menu-unexplained.webp", href: "/treatment/fertility/unexplained" },
                   ]
                 },
+                {
+                  category: "各種検査",
+                  color: "bg-green-50",
+                  borderColor: "border-green-200",
+                  tagColor: "bg-green-100 text-green-700",
+                  items: [
+                    { name: "女性プレコンセプションチェック", file: "menu-preconception-female.webp", href: "/test/preconception-female" },
+                    { name: "男性プレコンセプションチェック", file: "menu-preconception-male.webp", href: "/test/preconception-male" },
+                    { name: "AMH検査", file: "menu-amh.webp", href: "/test/amh" },
+                    { name: "精液検査", file: "menu-semen.webp", href: "/test/semen" },
+                    { name: "子宮卵管造影検査", file: "menu-hsg.webp", href: "/test/hsg" },
+                    { name: "子宮内膜検査", file: "menu-endometrium.webp", href: "/test/endometrium" },
+                    { name: "超音波検査", file: "menu-ultrasound.webp", href: "/test/ultrasound" },
+                    { name: "顕微鏡検査", file: "menu-microscopy.webp", href: "/test/microscopy" },
+                    { name: "ホルモン検査", file: "menu-hormone.webp", href: "/test/hormone" },
+                    { name: "淋菌・クラミジア検査", file: "menu-infection.webp", href: "/test/infection" },
+                    { name: "ビタミン・ミネラル検査", file: "menu-vitamin.webp", href: "/test/vitamin" },
+                    { name: "不育症の検査", file: "menu-recurrent.webp", href: "/test/recurrent" },
+                  ]
+                },
               ].map((group, gi) => (
                 <div key={gi} className={`${group.color} rounded-xl p-4 border ${group.borderColor}`}>
                   <span className={`inline-block ${group.tagColor} text-xs font-bold px-3 py-1 rounded-full mb-3`}>
