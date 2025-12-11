@@ -113,7 +113,12 @@ export function Footer() {
           ))}
         </div>
 
-        <div className="mt-12 pt-8 border-t border-gray-700 text-center">
+        <div className="mt-12 pt-8 border-t border-gray-700 flex flex-col md:flex-row justify-between items-center gap-4">
+          <div className="flex flex-wrap justify-center gap-4 text-sm text-gray-400">
+            <Link href="/recruit" className="hover:text-white transition-colors">求人情報</Link>
+            <Link href="/privacy_policy" className="hover:text-white transition-colors">プライバシーポリシー</Link>
+            <Link href="/sitemap" className="hover:text-white transition-colors">サイトマップ</Link>
+          </div>
           <p className="text-xs text-gray-400">
             © {new Date().getFullYear()} レディースクリニック ぷかぷか All rights reserved.
           </p>
